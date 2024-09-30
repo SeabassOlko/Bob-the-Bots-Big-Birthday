@@ -97,7 +97,212 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: pico_labo_chr_picolabo_00(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root
+      parentName: pico_labo_chr_picolabo_00(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hip
+      parentName: root
+      position: {x: -0, y: 0.79999995, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Left_Skirt01
+      parentName: Hip
+      position: {x: -0.22999999, y: -0.099999994, z: 0}
+      rotation: {x: -0.5226707, y: -0.47309586, z: 0.5258116, w: -0.4759389}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Left_Skirt02
+      parentName: Left_Skirt01
+      position: {x: -2.5047666e-17, y: -6.0250144e-15, z: 0.2009975}
+      rotation: {x: -0.5226707, y: -0.47309586, z: 0.5258116, w: 0.4759389}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Front_Skirt01
+      parentName: Hip
+      position: {x: -0, y: -0.099999994, z: 0.18822744}
+      rotation: {x: 0.47293955, y: 0.5256693, z: 0.4760961, w: 0.5228121}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Front_Skirt02
+      parentName: Front_Skirt01
+      position: {x: -0.2009975, y: -2.0078774e-17, z: 2.4341687e-17}
+      rotation: {x: -0.47293955, y: -0.5256693, z: -0.4760961, w: 0.5228121}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Right_Skirt01
+      parentName: Hip
+      position: {x: 0.22999999, y: -0.099999994, z: 0}
+      rotation: {x: 0.4753106, y: 0.5251964, z: -0.47364864, w: 0.52336}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Right_Skirt02
+      parentName: Right_Skirt01
+      position: {x: -6.1327104e-17, y: -3.3814646e-15, z: 0.20099813}
+      rotation: {x: -0.4753106, y: -0.5251964, z: 0.47364864, w: 0.52336}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Back_Skirt01
+      parentName: Hip
+      position: {x: -0, y: -0.099999994, z: -0.18900023}
+      rotation: {x: 0.52479494, y: 0.47390965, z: 0.5238029, w: 0.47500587}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Back_Skirt02
+      parentName: Back_Skirt01
+      position: {x: -0.20099905, y: 3.9968027e-17, z: -5.696498e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: Hip
+      position: {x: -0, y: 0.19999999, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Spine
+      position: {x: -0, y: 0.29999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Antenna
+      parentName: Head
+      position: {x: -0, y: 0.5299898, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftEye
+      parentName: Head
+      position: {x: -0.17999999, y: 0.28, z: 0.24}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightEye
+      parentName: Head
+      position: {x: 0.17999999, y: 0.28, z: 0.24}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftShoulder
+      parentName: Spine
+      position: {x: -0.28, y: 0.22, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftArm
+      parentName: LeftShoulder
+      position: {x: -0.02, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0.00000007223606, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftForeArm
+      parentName: LeftArm
+      position: {x: -0.29999998, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0.00000014467936, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHand
+      parentName: LeftForeArm
+      position: {x: -0.29999998, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHandThumb1
+      parentName: LeftHand
+      position: {x: -2.842171e-16, y: 0.015, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHandIndex1
+      parentName: LeftHand
+      position: {x: -2.842171e-16, y: -0.015, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoulder
+      parentName: Spine
+      position: {x: 0.28, y: 0.22, z: 0}
+      rotation: {x: 1, y: -0, z: 0, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightArm
+      parentName: RightShoulder
+      position: {x: 0.02, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0.000000023560805, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightForeArm
+      parentName: RightArm
+      position: {x: 0.29999998, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0.000000048609348, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHand
+      parentName: RightForeArm
+      position: {x: 0.29999998, y: 0, z: 0}
+      rotation: {x: 7.331033e-32, y: 2.9267304e-24, z: -0.0000000011499758, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHandThumb1
+      parentName: RightHand
+      position: {x: -0, y: -0.015, z: 1.83697e-18}
+      rotation: {x: 7.683795e-32, y: 3.0675618e-24, z: -6.617445e-24, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHandIndex1
+      parentName: RightHand
+      position: {x: -0, y: 0.015, z: -1.83697e-18}
+      rotation: {x: 7.683795e-32, y: 3.0675618e-24, z: -6.617445e-24, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftUpLeg
+      parentName: Hip
+      position: {x: -0.099999994, y: -0.12, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftLeg
+      parentName: LeftUpLeg
+      position: {x: -0, y: -0.29999998, z: 0}
+      rotation: {x: 0.0000000048479154, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftFoot
+      parentName: LeftLeg
+      position: {x: -0, y: -0.34, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightUpLeg
+      parentName: Hip
+      position: {x: 0.099999994, y: -0.12, z: 0}
+      rotation: {x: 1, y: -0, z: 0, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightLeg
+      parentName: RightUpLeg
+      position: {x: -0, y: 0.29999998, z: -3.6739402e-17}
+      rotation: {x: 0.000000004848439, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightFoot
+      parentName: RightLeg
+      position: {x: -0, y: 0.34, z: -4.1637992e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: models
+      parentName: pico_labo_chr_picolabo_00(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: eyebrow
+      parentName: models
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: body
+      parentName: models
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head_antenna
+      parentName: models
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ear
+      parentName: models
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head
+      parentName: models
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: facial
+      parentName: pico_labo_chr_picolabo_00(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
