@@ -104,9 +104,9 @@ public class PlayerController : MonoBehaviour
         cc.Move(horizontalMoveDir);
 
         // Update Blend Tree parameters
-        anim.SetFloat("Speed", currentSpeed);
-        anim.SetFloat("DirectionX", direction.x);
-        anim.SetFloat("DirectionY", direction.y);
+        anim.SetFloat("Forward/Back Speed", currentSpeed);
+        //anim.SetFloat("DirectionX", direction.x);
+        //anim.SetFloat("DirectionY", direction.y);
 
         //CheckEnemyVisibility();
 
