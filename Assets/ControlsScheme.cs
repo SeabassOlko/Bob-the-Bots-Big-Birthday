@@ -41,7 +41,7 @@ public partial class @ControlsScheme: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""3bcdf2ca-a6b6-493f-9ce3-8e301c63aaa4"",
-                    ""path"": ""2DVector(mode=2)"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
