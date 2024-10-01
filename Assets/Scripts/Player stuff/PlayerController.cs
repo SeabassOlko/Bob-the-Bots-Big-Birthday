@@ -10,11 +10,6 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 30f)]
     public float speed = 5f;
 
-    [SerializeField] private Transform GroundCheck;
-    [SerializeField] private bool isGrounded;
-    [SerializeField] private LayerMask isGroundLayer;
-    [SerializeField] private float groundCheckRadius = 0.3f;
-
     [SerializeField] public float mouseSensitivity = 100f;
     [SerializeField] private float xRotation = 0f;
     [SerializeField] public float jumpForce = 3.0f;
@@ -25,9 +20,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
 
     public GameObject weapon;
-    public GameObject weapon2;
     public Transform attachPoint;
-    public Transform backAttachPoint; // New attach point for the previously held weapon
+   
     public GameObject reticle;
 
     [SerializeField] public Transform cameraTransform;
@@ -35,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public bool enable = true;
     public LayerMask enemyLayerMask;
 
-    public GameObject enemy;
+    
     //public PlayerHealth playerHealth;
     //private GameManager gameManager;
     //private PlayerShoot playerShoot;
@@ -44,18 +38,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float deceleration = 2f;
     private float currentSpeed = 0f;
 
-    public bool hasWeapon1 = false;
-    public bool hasWeapon2 = false;
 
-    private bool isWeapon1Equipped = true;
-
-    public int playerScore;
     public List<string> inventoryItems = new List<string>();
-    //[SerializeField] private SaveLoad saveLoadManager;
+    [SerializeField] private SaveLoad saveLoadManager;
 
     void Start()
     {
-        //saveLoadManager = FindObjectOfType<SaveLoad>();
+        saveLoadManager = FindObjectOfType<SaveLoad>();
         cc = GetComponent<CharacterController>();
         canvas.SetActive(false);
         gravity = Physics.gravity.y;
@@ -73,8 +62,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Rotate the player to match the camera's Y rotation
-        Vector3 cameraRotation = cameraTransform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(0, cameraRotation.y, 0);
+        MouseLookAround();
 
         Vector3 camForward = cameraTransform.forward;
         Vector3 camRight = cameraTransform.right;
@@ -108,36 +96,24 @@ public class PlayerController : MonoBehaviour
         //anim.SetFloat("DirectionX", direction.x);
         //anim.SetFloat("DirectionY", direction.y);
 
-        //CheckEnemyVisibility();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-           // saveLoadManager.SaveGame();
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-           // saveLoadManager.LoadGame();
-        }
+        // CheckEnemyVisibility(); (commented if not needed in this case)
     }
 
-    private void CheckEnemyVisibility()
+    void MouseLookAround()
     {
-        Vector3 startingPos = transform.position;
-        startingPos.y += 1f;
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-        Debug.DrawLine(startingPos, transform.position + (transform.forward * 10), Color.red);
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        if (Physics.Raycast(ray, out hit, 100f, enemyLayerMask))
-        {
-           // enemy.GetComponent<EnemyAI>().StopAndDisappear();
-        }
-        else
-        {
-           // enemy.GetComponent<EnemyAI>().ResumeBehavior();
-        }
+        // Rotate player horizontally (Y-axis)
+        transform.Rotate(Vector3.up * mouseX);
+
+        // Rotate camera vertically (X-axis)
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Limit camera vertical rotation to avoid flipping
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
+
+
 
     public void MoveStarted(InputAction.CallbackContext ctx)
     {
@@ -190,14 +166,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleWeaponPickup(GameObject newWeapon)
     {
-        if (weapon != null)
-        {
-            // Move the currently held weapon to the back attach point
-            weapon.transform.SetParent(backAttachPoint);
-            weapon.transform.position = backAttachPoint.position;
-            weapon.transform.rotation = backAttachPoint.rotation;
-            weapon.GetComponent<Rigidbody>().isKinematic = true; // Keep it from moving around
-        }
+   
 
         // Pick up the new weapon
         weapon = newWeapon;
@@ -208,24 +177,21 @@ public class PlayerController : MonoBehaviour
         reticle.SetActive(true);
         anim.SetBool("Armed", true);
 
-        // Update weapon flags
-        hasWeapon1 = weapon.CompareTag("Weapon");
-        hasWeapon2 = weapon.CompareTag("Weapon2");
+ 
 
-        Debug.Log("hasWeapon1: " + hasWeapon1 + ", hasWeapon2: " + hasWeapon2);
+     
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Weapon") || collision.gameObject.CompareTag("Weapon2"))
         {
+            Debug.Log("Weapon collision detected. Picking up...");
             HandleWeaponPickup(collision.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("enemyAxe"))
-        {
-           // playerHealth.TakeDamage(5);
-        }
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -282,67 +248,6 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Jump");
             Debug.Log("Jump action triggered");
-        }
-    }
-
-    public void ChangeWeapon(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            if (hasWeapon1 && isWeapon1Equipped)
-            {
-                // Switch to weapon2
-                EquipWeapon(weapon2);
-                isWeapon1Equipped = false;
-            }
-            else if (hasWeapon2 && !isWeapon1Equipped)
-            {
-                // Switch to weapon1
-                EquipWeapon(weapon);
-                isWeapon1Equipped = true;
-            }
-            else
-            {
-                Debug.LogWarning("No weapon to switch to.");
-            }
-        }
-    }
-
-
-
-    public void EquipWeapon(GameObject weaponToEquip)
-    {
-        if (weaponToEquip != null)
-        {
-            // Move the currently equipped weapon to the back attach point if it exists
-            if (weapon != null)
-            {
-                weapon.transform.SetParent(backAttachPoint);
-                weapon.transform.position = backAttachPoint.position;
-                weapon.transform.rotation = backAttachPoint.rotation;
-                weapon.GetComponent<Rigidbody>().isKinematic = true; // Ensure it stays in place
-            }
-
-            // Equip the new weapon
-            weapon = weaponToEquip;
-            weapon.GetComponent<Rigidbody>().isKinematic = true;
-            weapon.transform.SetParent(attachPoint);
-            weapon.transform.position = attachPoint.position;
-            weapon.transform.rotation = attachPoint.rotation;
-
-            // Update weapon flags
-            hasWeapon1 = weapon.CompareTag("Weapon");
-            hasWeapon2 = weapon.CompareTag("Weapon2");
-
-            // Set reticle and animation state
-            reticle.SetActive(true);
-            anim.SetBool("Armed", true);
-
-            Debug.Log($"Equipped weapon: {weapon.name}");
-        }
-        else
-        {
-            Debug.LogWarning("Weapon to equip is null.");
         }
     }
 
