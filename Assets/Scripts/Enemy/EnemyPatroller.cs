@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBomber : Enemy
+public class EnemyPatroller : Enemy
 {
     [SerializeField] int damage = 5;
 
@@ -29,11 +29,10 @@ public class EnemyBomber : Enemy
         if (Vector3.Distance(transform.position, player.position) <= 15f)
         {
             movement.chase();
-            if (!sparklerParticles.isPlaying)
-                sparklerParticles.Play();
-            if (Vector3.Distance(transform.position, player.position) <= 2.0f)
+
+            if (Vector3.Distance(transform.position, player.position) <= 8f)
             {
-                //blow up
+                movement.stopMove();
             }
         }
         else

@@ -32,8 +32,8 @@ public class EnemyTurretShoot : Enemy
             transform.LookAt(player.position);
             transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
 
-            if (canShoot)
-                StartCoroutine(shoot());
+            if (canShoot) { }
+                //StartCoroutine(shoot());
 
         }
     }
