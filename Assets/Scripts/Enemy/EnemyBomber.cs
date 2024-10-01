@@ -34,7 +34,7 @@ public class EnemyBomber : Enemy
             }
         }
         else
-            movement.patrol();
+            movement.Idle();
 
         //anim.SetFloat("Speed", transform.TransformDirection(transform.position).magnitude);
     }
