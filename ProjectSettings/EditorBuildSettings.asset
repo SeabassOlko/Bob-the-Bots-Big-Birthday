@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 9628d5fffc52a8b41a5854426eb4d6ba
+  - enabled: 1
+    path: Assets/Scenes/FUNTIME.unity
+    guid: d1cb77b57facc174294adf08d06d8a28
   m_configObjects: {}
