@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float gravity;
     [SerializeField] private Vector2 direction;
 
-    public Animator anim;
+    Animator anim;
 
     public GameObject weapon;
     public Transform attachPoint;
@@ -46,10 +46,10 @@ public class PlayerController : MonoBehaviour
     {
         saveLoadManager = FindObjectOfType<SaveLoad>();
         cc = GetComponent<CharacterController>();
-        canvas.SetActive(false);
+        //canvas.SetActive(false);
         gravity = Physics.gravity.y;
         cameraTransform = Camera.main.transform;
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
        // playerHealth = GetComponent<PlayerHealth>();
     }
 
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Weapon") || collision.gameObject.CompareTag("Weapon2"))
+        if (collision.gameObject.CompareTag("Weapon"))
         {
             Debug.Log("Weapon collision detected. Picking up...");
             HandleWeaponPickup(collision.gameObject);
