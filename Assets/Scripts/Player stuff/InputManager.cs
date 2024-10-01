@@ -8,11 +8,16 @@ public class InputManager : Singleton<InputManager>
     [SerializeField] private PlayerController controller;
     //[SerializeField] private EnemyAI enemyController;
 
+
     protected override void Awake()
     {
+        
         base.Awake();
+        controller = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
+
         inputAction = new ControlsScheme();
         DontDestroyOnLoad(gameObject);
+        
     }
 
     private void OnEnable()
@@ -96,4 +101,6 @@ public class InputManager : Singleton<InputManager>
     //        inputAction.Controls.EnemyAnim3.performed += enemyController.OnEnemyAnim3;
     //    }
     //}
+
+
 }
