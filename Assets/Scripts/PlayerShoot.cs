@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
             // Handle aiming when the right mouse button is held down
             if (Input.GetMouseButton(1))
             {
-               // anim.SetBool("Aim", true);
+               // anim.SetBool("Aiming", true);
 
                 // If the left mouse button is pressed while aiming, shoot
                 if (Input.GetMouseButtonDown(0))
@@ -39,7 +39,7 @@ public class PlayerShoot : MonoBehaviour
             else
             {
                 // Set "Aim" to false only when the right mouse button is released
-                //anim.SetBool("Aim", false);
+               // anim.SetBool("Aiming", false);
             }
         }
     }

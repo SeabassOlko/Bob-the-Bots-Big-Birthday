@@ -127,40 +127,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Move Canceled");
     }
 
-    public void DropWeapon(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed && weapon != null)
-        {
-            Debug.Log("Dropping weapon");
 
-            // Detach the weapon from the player
-            attachPoint.transform.DetachChildren();
-
-            // Ensure the weapon can interact with physics
-            Rigidbody weaponRB = weapon.GetComponent<Rigidbody>();
-            if (weaponRB != null)
-            {
-                weaponRB.isKinematic = false; // Allow physics to affect the weapon
-                weaponRB.AddForce(transform.forward * 5, ForceMode.Impulse); // Apply a force to drop the weapon
-                weaponRB.useGravity = true;
-            }
-            else
-            {
-                Debug.LogWarning("Weapon does not have a Rigidbody component.");
-            }
-
-            // Reset weapon state
-            weapon = null;
-            reticle.SetActive(false);
-            anim.SetBool("Armed", false);
-
-            Debug.Log("Weapon dropped and detached");
-        }
-        else
-        {
-            Debug.LogWarning("No weapon to drop or input not performed.");
-        }
-    }
 
 
 
@@ -175,7 +142,7 @@ public class PlayerController : MonoBehaviour
         weapon.transform.SetParent(attachPoint);
         Physics.IgnoreCollision(GetComponent<Collider>(), weapon.GetComponent<Collider>());
         reticle.SetActive(true);
-        anim.SetBool("Armed", true);
+        anim.SetBool("Aiming", true);
 
  
 
@@ -196,27 +163,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Water"))
-        {
-           // playerHealth.TakeDamage(5);
-        }
 
-        if (other.gameObject.CompareTag("Fire"))
-        {
-           // playerHealth.TakeDamage(5);
-        }
-
-        if (other.gameObject.CompareTag("EndTrigger"))
-        {
-            SceneManager.LoadScene(3);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-        }
-
-        if (other.gameObject.CompareTag("enemyAxe"))
-        {
-           // playerHealth.TakeDamage(5);
-        }
     }
 
     public void Punch(InputAction.CallbackContext ctx)
