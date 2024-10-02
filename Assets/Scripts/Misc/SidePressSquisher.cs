@@ -36,7 +36,8 @@ public class SidePress : MonoBehaviour
             playerTransform.localScale = playerSize.originalSize;
 
             playerSize.isSquished = false; // Mark as not squished anymore
-            isTriggered = false; // Reset the trigger flag
+            
         }
+        isTriggered = false; // Reset the trigger flag
     }
 }
