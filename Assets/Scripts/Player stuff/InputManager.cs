@@ -2,21 +2,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows;
 
-public class InputManager : Singleton<InputManager>
+public class InputManager : MonoBehaviour
 {
     [SerializeField] private ControlsScheme inputAction;
     [SerializeField] private PlayerController controller;
     //[SerializeField] private EnemyAI enemyController;
 
 
-    protected override void Awake()
+     void Awake()
     {
         
-        base.Awake();
-        controller = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
+        
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
         inputAction = new ControlsScheme();
-        DontDestroyOnLoad(gameObject);
+        
         
     }
 

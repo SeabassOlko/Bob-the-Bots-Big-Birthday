@@ -121,10 +121,10 @@ namespace SlimUI.ModernMenu
 
         public void PlayCampaign()
         {
-            exitMenu.SetActive(false);
-            if (extrasMenu) extrasMenu.SetActive(false);
-            playMenu.SetActive(true);
-            LoadScene("Level"); // Changed to load the "Level" scene
+            //exitMenu.SetActive(false);
+            //if (extrasMenu) extrasMenu.SetActive(false);
+            //playMenu.SetActive(true);
+            LoadScene("Cutscene"); // Changed to load the "cutscene" scene
         }
 
         public void PlayCampaignMobile()
@@ -133,7 +133,7 @@ namespace SlimUI.ModernMenu
             if (extrasMenu) extrasMenu.SetActive(false);
             playMenu.SetActive(true);
             mainMenu.SetActive(false);
-            LoadScene("Level"); // Changed to load the "Level" scene
+            LoadScene("Cutscene"); // Changed to load the "Level" scene
         }
 
         public void ReturnMenu()
@@ -288,9 +288,9 @@ namespace SlimUI.ModernMenu
         }
 
         // Load Bar synching animation
-        IEnumerator LoadAsynchronously(string Level)
+        IEnumerator LoadAsynchronously(string Cutscene)
         {
-            AsyncOperation operation = SceneManager.LoadSceneAsync(Level);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(Cutscene);
             operation.allowSceneActivation = false;
             mainCanvas.SetActive(false);
             loadingMenu.SetActive(true);
