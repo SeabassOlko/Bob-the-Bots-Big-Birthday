@@ -187,29 +187,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8260481890267336196, guid: 905d67238cfe80f49a85b8855ca0841c, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905d67238cfe80f49a85b8855ca0841c, type: 3}
---- !u!1 &488899944 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7137451706946367664, guid: 8ad7376961a74284884d015005aaf4c9, type: 3}
-  m_PrefabInstance: {fileID: 2421765961769076349}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &488899948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488899944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 001def3a6fe4248499a759964fb1eca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobAmount: 1
 --- !u!1 &763915059
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,10 +541,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrolBalloon
       objectReference: {fileID: 0}
-    - target: {fileID: 5309931595011398428, guid: 8ad7376961a74284884d015005aaf4c9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.2
-      objectReference: {fileID: 0}
     - target: {fileID: 8896466346420138290, guid: 8ad7376961a74284884d015005aaf4c9, type: 3}
       propertyPath: playerTransform
       value: 
@@ -566,10 +548,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7137451706946367664, guid: 8ad7376961a74284884d015005aaf4c9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 488899948}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ad7376961a74284884d015005aaf4c9, type: 3}
 --- !u!1001 &2903537427943357129
 PrefabInstance:

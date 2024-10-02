@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 6383590662106058586}
   - component: {fileID: 201566748728038521}
   - component: {fileID: 4075501013755683072}
+  - component: {fileID: 8481253712472333495}
   m_Layer: 0
   m_Name: RedBalloon
   m_TagString: Untagged
@@ -329,6 +330,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8481253712472333495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518310523895551549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001def3a6fe4248499a759964fb1eca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobAmount: 0.15
 --- !u!1 &4142685932016607191
 GameObject:
   m_ObjectHideFlags: 0

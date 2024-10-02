@@ -1003,6 +1003,7 @@ GameObject:
   - component: {fileID: 5309931595011398428}
   - component: {fileID: 1105563426420879358}
   - component: {fileID: 6941064369831863721}
+  - component: {fileID: 3578518126949702866}
   m_Layer: 0
   m_Name: GreenBalloon
   m_TagString: Untagged
@@ -1080,6 +1081,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3578518126949702866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137451706946367664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001def3a6fe4248499a759964fb1eca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobAmount: 0.15
 --- !u!1 &8040272249827806736
 GameObject:
   m_ObjectHideFlags: 0
