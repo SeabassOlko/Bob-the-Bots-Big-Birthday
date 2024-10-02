@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 3538044425545940565}
   - component: {fileID: 4268575466017015334}
   - component: {fileID: 4631096773549162097}
+  - component: {fileID: 6096320489945444391}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -238,12 +239,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6096320489945444391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353038164939286513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d59b786d913723479e751a182b75bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restoreDuration: 0.5
 --- !u!1 &2036944676494013720
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +834,7 @@ GameObject:
   - component: {fileID: 246521246137143444}
   - component: {fileID: 4678448963879865356}
   - component: {fileID: 5936458725171818730}
+  - component: {fileID: 2053374399776453232}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -861,8 +876,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.8452663, y: 1, z: 1.8918543}
-  m_Center: {x: 0.3648653, y: 0, z: 0.952621}
+  m_Size: {x: 2.8452663, y: 1, z: 0.3671894}
+  m_Center: {x: 0.3648653, y: 0, z: 0.4026556}
 --- !u!114 &5936458725171818730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,8 +892,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftPlunger: {fileID: 6616906892620924979}
   rightPlunger: {fileID: 1041005254973466997}
-  slamDistance: 0.5
-  slamSpeed: 5
+  slamDistance: 0.6
+  slamSpeed: 7
+--- !u!114 &2053374399776453232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775043514142751958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1ab6b1396b9344bb268fd21bf15534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1429954232896169632, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
 --- !u!1 &4886863044519382583
 GameObject:
   m_ObjectHideFlags: 0
