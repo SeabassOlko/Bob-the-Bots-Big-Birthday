@@ -102,6 +102,37 @@ Skybox:
   m_GameObject: {fileID: 2678221207408352656}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 98740415e46103c4da3ab7bb864ab17d, type: 2}
+--- !u!1 &4275107154356853783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5015426689293682222}
+  m_Layer: 3
+  m_Name: BobCenterMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5015426689293682222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4275107154356853783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.142, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8521004954394797780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5300928932785588644
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,11 +164,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0.012606144, y: 0, z: 0.030864}
-  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5630593934228108938}
   - {fileID: 3703888549830495407}
+  - {fileID: 5015426689293682222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!136 &6044766661270282517
@@ -181,7 +213,6 @@ MonoBehaviour:
   jumpForce: 3
   gravity: -9.81
   direction: {x: 0, y: 0}
-  anim: {fileID: 1784498083365612784}
   weapon: {fileID: 0}
   attachPoint: {fileID: 4993646266015389848}
   reticle: {fileID: 0}
@@ -407,11 +438,6 @@ PrefabInstance:
       addedObject: {fileID: 4993646266015389848}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db8198e635f0f3b45a3d30bbce3d4f75, type: 3}
---- !u!95 &1784498083365612784 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: db8198e635f0f3b45a3d30bbce3d4f75, type: 3}
-  m_PrefabInstance: {fileID: 5307872749226545505}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4608280412563555722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -695035684441680661, guid: db8198e635f0f3b45a3d30bbce3d4f75, type: 3}
