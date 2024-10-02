@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6401983078107596528}
   - component: {fileID: 2072550479950597509}
   - component: {fileID: 6596429628455811467}
+  - component: {fileID: 3939774485502988761}
   m_Layer: 0
   m_Name: KamikazeBalloon
   m_TagString: Untagged
@@ -32,10 +33,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22.97, y: 1.45, z: -23.8}
-  m_LocalScale: {x: 0.3, y: 0.30000007, z: 0.30000007}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6383590662106058586}
+  - {fileID: 2864219815026257335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &855332666871045099
@@ -48,10 +50,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.2
-  m_Speed: 8
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 180
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -94,6 +96,10 @@ MonoBehaviour:
   MAX_HEALTH: 0
   drop: {fileID: 0}
   damage: 5
+  stopDistance: 1
+  explosionRadius: 3
+  explosionSFX: {fileID: 598726996756376824, guid: 0dfdfdc84b3dda745a824a8304d5bfb1, type: 3}
+  balloonCenterMass: {fileID: 7353935026468848507}
   player: {fileID: 0}
   attackClip: {fileID: 0}
   sparklerParticles: {fileID: 5373659046621554430}
@@ -241,6 +247,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1992655, y: 6.6, z: 2}
   m_Center: {x: 0, y: 2.65, z: 0}
+--- !u!114 &3939774485502988761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327799026815010855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0973b22f573b044b4d2d14ec5dce44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewAngle: 360
+  viewRadius: 10
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 8
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &3518310523895551549
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bobAmount: 0.15
+  parentTransform: 0
+  originalYPos: 0
 --- !u!1 &4142685932016607191
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,6 +5450,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7353935026468848507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2864219815026257335}
+  m_Layer: 0
+  m_Name: BalloonCenterMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2864219815026257335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353935026468848507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8052303058255403248}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7427007535084242941
 GameObject:
   m_ObjectHideFlags: 0

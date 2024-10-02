@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioSource), typeof(VisionConeScript))]
 public abstract class Enemy : MonoBehaviour
 {
     protected Animator anim;
@@ -12,6 +12,8 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float MAX_HEALTH;
 
     [SerializeField] protected GameObject drop;
+
+    protected VisionConeScript enemyVision;
 
     protected AudioSource enemyAudioSource;
 
@@ -25,6 +27,8 @@ public abstract class Enemy : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         enemyAudioSource = GetComponent<AudioSource>();
+
+        enemyVision = GetComponent<VisionConeScript>();
 
         if (MAX_HEALTH <= 0) MAX_HEALTH = 4;
 

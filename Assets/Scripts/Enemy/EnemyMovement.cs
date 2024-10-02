@@ -78,12 +78,12 @@ public class EnemyMovement : MonoBehaviour
 
     public void stopMove()
     {
-        stopMovement = true;
+        agent.isStopped = true;
     }
 
     public void startMove()
     {
-        stopMovement = false;
+        agent.isStopped = false;
     }
 
     public float Speed()
