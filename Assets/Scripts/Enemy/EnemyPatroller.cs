@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(VisionConeScript))]
 public class EnemyPatroller : Enemy
 {
-    [SerializeField] int damage = 5;
+    bool canShoot = true;
+    [SerializeField] Transform playerCenter;
+
+    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject projectileSpawnPoint;
+    [SerializeField] ParticleSystem muzzleFlash;
 
     EnemyMovement movement;
-
+    [SerializeField] float stopAndShootDistance;
     [SerializeField] Transform player;
     [SerializeField] AudioClip attackClip;
     [SerializeField] ParticleSystem sparklerParticles;
@@ -26,14 +32,21 @@ public class EnemyPatroller : Enemy
     {
         if (isDead) return;
 
-        if (Vector3.Distance(transform.position, player.position) <= 15f)
+        if (enemyVision.SeeTarget())
         {
             movement.chase();
 
-            if (Vector3.Distance(transform.position, player.position) <= 8f)
+            if (Vector3.Distance(transform.position, player.position) <= stopAndShootDistance)
             {
                 movement.stopMove();
+                transform.LookAt(playerCenter.position);
+                transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
+
+                if (canShoot)
+                    StartCoroutine(Shoot());
             }
+            else
+                movement.startMove();
         }
         else
             movement.Idle();
@@ -51,14 +64,17 @@ public class EnemyPatroller : Enemy
         }
     }
 
-    public override void hitPlayer(Collider player)
+    IEnumerator Shoot()
     {
-        base.hitPlayer(player);
-
-        //player.gameObject.GetComponent<PlayerController>().Hurt(damage);
-
+        canShoot = false;
+        //anim.SetTrigger("Shoot");
+        //yield return new WaitForSeconds(0.43f);
+        //enemyAudioSource.PlayOneShot(attackClip);
+        muzzleFlash.Play();
+        Instantiate(projectile, projectileSpawnPoint.transform.position, Quaternion.LookRotation(playerCenter.position - projectileSpawnPoint.transform.position, Vector3.up));
+        yield return new WaitForSeconds(2f);
+        canShoot = true;
     }
-
 
     void death()
     {

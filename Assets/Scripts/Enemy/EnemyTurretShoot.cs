@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EnemyTurretShoot : Enemy
 {
-    [SerializeField] Transform player;
+    [SerializeField] Transform playerCenter;
 
     [SerializeField] GameObject projectile;
+    [SerializeField] GameObject projectileSpawnPoint;
+    [SerializeField] ParticleSystem muzzleFlash;
 
     [SerializeField] AudioClip hurtClip;
     [SerializeField] AudioClip attackClip;
@@ -27,14 +29,13 @@ public class EnemyTurretShoot : Enemy
     {
         if (isDead) return;
 
-        if (Vector3.Distance(transform.position, player.position) <= 10f)
+        if (enemyVision.SeeTarget())
         {
-            transform.LookAt(player.position);
+            transform.LookAt(playerCenter.position);
             transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
 
-            if (canShoot) { }
-                //StartCoroutine(shoot());
-
+            if (canShoot) 
+                StartCoroutine(Shoot());
         }
     }
 
@@ -45,14 +46,15 @@ public class EnemyTurretShoot : Enemy
         Destroy(gameObject, 0.5f);
     }
 
-    IEnumerator shoot()
+    IEnumerator Shoot()
     {
         canShoot = false;
-        anim.SetTrigger("Shoot");
-        yield return new WaitForSeconds(0.43f);
-        enemyAudioSource.PlayOneShot(attackClip);
-        Instantiate(projectile, transform.position + new Vector3(0, 0.75f, 0.5f), transform.rotation);
-        yield return new WaitForSeconds(4f);
+        //anim.SetTrigger("Shoot");
+        //yield return new WaitForSeconds(0.43f);
+        //enemyAudioSource.PlayOneShot(attackClip);
+        muzzleFlash.Play();
+        Instantiate(projectile, projectileSpawnPoint.transform.position, Quaternion.LookRotation(playerCenter.position - projectileSpawnPoint.transform.position, Vector3.up));
+        yield return new WaitForSeconds(2f);
         canShoot = true;
     }
 
