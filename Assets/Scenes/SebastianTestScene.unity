@@ -674,7 +674,7 @@ PrefabInstance:
     - target: {fileID: 3709983214954964591, guid: 8ad7376961a74284884d015005aaf4c9, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 4677726084608750074}
+      objectReference: {fileID: 0}
     - target: {fileID: 3709983214954964591, guid: 8ad7376961a74284884d015005aaf4c9, type: 3}
       propertyPath: playerCenter
       value: 
@@ -832,7 +832,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
 --- !u!4 &4677726084608750074 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8521496975348820633, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5015426689293682222, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
   m_PrefabInstance: {fileID: 4677726084608750073}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4729907879231732378
