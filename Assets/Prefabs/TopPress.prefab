@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 3688247283818851176}
   - component: {fileID: 7747147471553494563}
   - component: {fileID: 85062407541457321}
+  - component: {fileID: 6725197753886900714}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -506,8 +507,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.8452663, y: 1, z: 0.3671894}
-  m_Center: {x: 0.3648653, y: 0, z: 0.4026556}
+  m_Size: {x: 2.8452663, y: 0.5210664, z: 0.36718944}
+  m_Center: {x: 0.36486518, y: 0.23946679, z: 0.40265152}
 --- !u!114 &85062407541457321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +522,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleEffect: {fileID: 1429954232896169632, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
+--- !u!114 &6725197753886900714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151854989567409379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89db2c7144b53d04abd57264cadd3c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterAudioClip: {fileID: 8300000, guid: 728117091d60c5c44b762b66544ba2e2, type: 3}
+  exitAudioClip: {fileID: 0}
+  volume: 0.4
 --- !u!1 &7440279677892937677
 GameObject:
   m_ObjectHideFlags: 0

@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 817019649957803602}
   - component: {fileID: 4056478480429239550}
   - component: {fileID: 3418481876652416445}
+  - component: {fileID: 4274102056159556723}
   m_Layer: 0
   m_Name: Trigger1
   m_TagString: Untagged
@@ -452,3 +453,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9546954}
+--- !u!114 &4274102056159556723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9171508230753462384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89db2c7144b53d04abd57264cadd3c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterAudioClip: {fileID: 8300000, guid: eaff14079e0dfaf4aa7d0744349a2edc, type: 3}
+  exitAudioClip: {fileID: 8300000, guid: eaff14079e0dfaf4aa7d0744349a2edc, type: 3}
+  volume: 0.5
