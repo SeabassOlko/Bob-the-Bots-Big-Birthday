@@ -8,6 +8,9 @@ TagManager:
   - Balloon
   - Ground
   - Press
+  - Projectile
+  - FxTemporaire
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
