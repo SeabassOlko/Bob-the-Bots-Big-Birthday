@@ -243,6 +243,7 @@ Transform:
   m_Children:
   - {fileID: 1158516871387286461}
   - {fileID: 9202667111172305795}
+  - {fileID: 3688247283818851176}
   m_Father: {fileID: 5997862592895123743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4899479144947741681
@@ -279,8 +280,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.7359495, y: 1, z: 1.1079445}
-  m_Center: {x: -2.4906678, y: 0, z: -10.202253}
+  m_Size: {x: 2.3212216, y: 1, z: 0.7592381}
+  m_Center: {x: -2.4843125, y: 0, z: -10.376209}
 --- !u!1 &2406057408076815844
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +454,73 @@ Transform:
   - {fileID: 5834615844080009090}
   m_Father: {fileID: 5997862592895123743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7151854989567409379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3688247283818851176}
+  - component: {fileID: 7747147471553494563}
+  - component: {fileID: 85062407541457321}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3688247283818851176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151854989567409379}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.867, y: 1.836, z: -10.739}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2033752531243547463}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7747147471553494563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151854989567409379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8452663, y: 1, z: 0.3671894}
+  m_Center: {x: 0.3648653, y: 0, z: 0.4026556}
+--- !u!114 &85062407541457321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151854989567409379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1ab6b1396b9344bb268fd21bf15534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1429954232896169632, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
 --- !u!1 &7440279677892937677
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +638,7 @@ GameObject:
   - component: {fileID: 4949217868939556078}
   - component: {fileID: 951139265504463335}
   - component: {fileID: 6446909826989987473}
+  - component: {fileID: 5813372795849832737}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Press
@@ -586,7 +655,7 @@ Transform:
   m_GameObject: {fileID: 8213865513044013599}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5570507, y: 2.229475, z: -10.353902}
+  m_LocalPosition: {x: -2.5570507, y: 2.346, z: -10.353902}
   m_LocalScale: {x: 1.23, y: 0.3075, z: 1.23}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -657,9 +726,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5813372795849832737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213865513044013599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916e0b74c355a284bb699a509757a574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TopPlunger: {fileID: 0}
+  squishAmount: 0.2
+  squishDuration: 5
+  returnDuration: 0.2
