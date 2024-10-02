@@ -133,7 +133,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0.012606144, y: 0, z: 0.030864}
-  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5630593934228108938}
@@ -181,7 +181,6 @@ MonoBehaviour:
   jumpForce: 3
   gravity: -9.81
   direction: {x: 0, y: 0}
-  anim: {fileID: 1784498083365612784}
   weapon: {fileID: 0}
   attachPoint: {fileID: 4993646266015389848}
   reticle: {fileID: 0}
@@ -407,11 +406,6 @@ PrefabInstance:
       addedObject: {fileID: 4993646266015389848}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db8198e635f0f3b45a3d30bbce3d4f75, type: 3}
---- !u!95 &1784498083365612784 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: db8198e635f0f3b45a3d30bbce3d4f75, type: 3}
-  m_PrefabInstance: {fileID: 5307872749226545505}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4608280412563555722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -695035684441680661, guid: db8198e635f0f3b45a3d30bbce3d4f75, type: 3}
