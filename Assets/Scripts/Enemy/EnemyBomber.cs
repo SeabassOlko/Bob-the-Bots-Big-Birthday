@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyBomber : Enemy
 {
     [SerializeField] int damage = 5;
+    [SerializeField] float stopDistance = 1f;
+    [SerializeField] float explosionRadius = 3f;
+
+    [SerializeField] GameObject explosionSFX;
+    [SerializeField] GameObject balloonCenterMass;
 
     EnemyMovement movement;
 
@@ -26,20 +32,19 @@ public class EnemyBomber : Enemy
     {
         if (isDead) return;
 
-        if (Vector3.Distance(transform.position, player.position) <= 15f)
+        if (enemyVision.SeeTarget())
         {
             movement.chase();
             if (!sparklerParticles.isPlaying)
                 sparklerParticles.Play();
-            if (Vector3.Distance(transform.position, player.position) <= 2.0f)
+            StartCoroutine(BlowUp());
+            if (Vector3.Distance(transform.position, player.position) <= stopDistance)
             {
-                //blow up
+                movement.stopMove();
             }
         }
         else
             movement.Idle();
-
-        //anim.SetFloat("Speed", transform.TransformDirection(transform.position).magnitude);
     }
 
     public override void hit(int damage)
@@ -58,6 +63,18 @@ public class EnemyBomber : Enemy
 
         //player.gameObject.GetComponent<PlayerController>().Hurt(damage);
 
+    }
+
+    IEnumerator BlowUp()
+    {
+        yield return new WaitForSeconds(4.0f);
+        Instantiate(explosionSFX, balloonCenterMass.transform.position, balloonCenterMass.transform.rotation);
+        if (Vector3.Distance(transform.position, player.position) <= explosionRadius)
+        {
+            Debug.Log("Player hit by explosion, takes " + damage + " damage");
+            //hurt player
+        }
+        Destroy(gameObject);
     }
 
 
