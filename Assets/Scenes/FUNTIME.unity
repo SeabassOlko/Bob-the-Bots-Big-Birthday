@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f229fadd9e90e6141b4c97df11564339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: AlexTestScene
+  sceneToLoad: Level
 --- !u!4 &316500176
 Transform:
   m_ObjectHideFlags: 0

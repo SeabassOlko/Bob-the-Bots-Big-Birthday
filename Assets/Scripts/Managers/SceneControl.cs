@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneControl : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad; // The name of the scene to load after pressing a key
-    SaveLoad saveloadMGR;
+   
 
     private bool canPressKey = false;
 
