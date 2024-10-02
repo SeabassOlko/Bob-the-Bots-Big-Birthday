@@ -835,6 +835,7 @@ GameObject:
   - component: {fileID: 4678448963879865356}
   - component: {fileID: 5936458725171818730}
   - component: {fileID: 2053374399776453232}
+  - component: {fileID: 7865913829568526715}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -907,6 +908,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleEffect: {fileID: 1429954232896169632, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
+--- !u!114 &7865913829568526715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775043514142751958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89db2c7144b53d04abd57264cadd3c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterAudioClip: {fileID: 8300000, guid: 728117091d60c5c44b762b66544ba2e2, type: 3}
+  exitAudioClip: {fileID: 0}
+  volume: 0.4
 --- !u!1 &4886863044519382583
 GameObject:
   m_ObjectHideFlags: 0
