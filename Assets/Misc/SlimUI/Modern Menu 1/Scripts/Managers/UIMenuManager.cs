@@ -121,10 +121,12 @@ namespace SlimUI.ModernMenu
 
         public void PlayCampaign()
         {
-            //exitMenu.SetActive(false);
-            //if (extrasMenu) extrasMenu.SetActive(false);
-            //playMenu.SetActive(true);
+            exitMenu.SetActive(false);
+            if (extrasMenu) extrasMenu.SetActive(false);
+            playMenu.SetActive(true);
             LoadScene("Cutscene"); // Changed to load the "cutscene" scene
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         public void PlayCampaignMobile()
