@@ -18,6 +18,8 @@ public class EnemyPatroller : Enemy
     [SerializeField] AudioClip gunShotClip;
     [SerializeField] ParticleSystem sparklerParticles;
 
+    [SerializeField] bool patrolable = false;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -49,6 +51,8 @@ public class EnemyPatroller : Enemy
             else
                 movement.startMove();
         }
+        else if (patrolable)
+            movement.patrol();
         else
             movement.Idle();
     }
