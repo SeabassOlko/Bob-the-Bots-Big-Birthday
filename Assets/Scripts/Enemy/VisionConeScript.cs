@@ -13,6 +13,7 @@ public class VisionConeScript : MonoBehaviour
     [SerializeField] LayerMask obstructionMask;
 
     bool canSeeTarget = false;
+    public GameObject rangetarget;
 
     // Update is called once per frame
     void Update()
@@ -49,5 +50,37 @@ public class VisionConeScript : MonoBehaviour
     public bool SeeTarget()
     {
         return canSeeTarget;
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Draw the view radius
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, viewRadius);
+
+        // Draw the view angles
+        Vector3 angleA = DirFromAngle(-viewAngle / 2, false);
+        Vector3 angleB = DirFromAngle(viewAngle / 2, false);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position + angleA * viewRadius);
+        Gizmos.DrawLine(transform.position, transform.position + angleB * viewRadius);
+
+        // If the enemy can see the player, draw a line to the player
+        if (canSeeTarget)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, rangetarget.transform.position);
+        }
+    }
+
+    // Helper function to convert angle to a direction vector
+    private Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
+    {
+        if (!angleIsGlobal)
+        {
+            angleInDegrees += transform.eulerAngles.y;
+        }
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 }
