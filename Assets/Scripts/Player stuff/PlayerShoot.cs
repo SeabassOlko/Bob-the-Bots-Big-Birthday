@@ -13,6 +13,10 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] float shootDistance;
     [SerializeField] int damage;
+    [SerializeField] float cooldownTime = 1f;
+    [SerializeField] GameObject ReticleCanvas;
+
+    bool canShoot = true;
 
     void Start()
     {
@@ -29,11 +33,17 @@ public class PlayerShoot : MonoBehaviour
             if (Input.GetMouseButton(1))
             {
                 anim.SetBool("Aiming", true);
+                if (!ReticleCanvas.activeSelf)
+                {
+                    ReticleCanvas.SetActive(true);
+                }
 
                 // If the left mouse button is pressed while aiming, shoot
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && canShoot)
                 {
                     Shoot();
+                    canShoot = false;
+                    StartCoroutine(ShotCooldown());
                     audioSource.PlayOneShot(gunshotClip);
                     muzzleFlash.Play();
                 }
@@ -41,7 +51,11 @@ public class PlayerShoot : MonoBehaviour
             else
             {
                 // Set "Aim" to false only when the right mouse button is released
-               anim.SetBool("Aiming", false);
+                anim.SetBool("Aiming", false);
+                if (ReticleCanvas.activeSelf)
+                {
+                    ReticleCanvas.SetActive(false);
+                }
             }
         }
     }
@@ -65,5 +79,11 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator ShotCooldown()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canShoot = true;
     }
 }
