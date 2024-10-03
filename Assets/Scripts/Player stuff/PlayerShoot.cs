@@ -77,6 +77,10 @@ public class PlayerShoot : MonoBehaviour
                 {
                     hit.collider.gameObject.GetComponent<Enemy>().hit(damage);
                 }
+                else if (hit.collider.tag == "Post")
+                {
+                    hit.collider.gameObject.GetComponent<PostTrigger>().Hit();
+                }
             }
         }
     }
