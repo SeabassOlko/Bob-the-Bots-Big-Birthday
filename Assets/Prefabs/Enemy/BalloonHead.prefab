@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8141351094759888227}
   - component: {fileID: 6524762530481446611}
   - component: {fileID: 462031019500549856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Balloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3234077905093851687}
   - component: {fileID: 8313800771709578530}
   - component: {fileID: 4708748677780717623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye Whites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3094590289528579707}
   - component: {fileID: 3045395834824853806}
   - component: {fileID: 6697430172490474010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye Whites (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4562116321870989269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 7718665580981271236}
   - component: {fileID: 1482662713782841633}
   - component: {fileID: 3461033438602997247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_D_Receiver_Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 6380413412672137277}
   - component: {fileID: 29551873316442567}
   - component: {fileID: 169945126598361625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_D_Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 1986277722557355479}
   - component: {fileID: 5765102328073363400}
   - component: {fileID: 7723274128421724847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_D_Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 7349595245560544807}
   - component: {fileID: 3793338943858087373}
   - component: {fileID: 1547191865677294533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_D_Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 4608990418940920225}
   - component: {fileID: 6045874938596760333}
   - component: {fileID: 7775191233896589807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BalloonHead
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -795,6 +795,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 1
+  pointOfView: {fileID: 8141351094759888227}
+  rangetarget: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
 --- !u!114 &7775191233896589807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6703600070734633997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +866,7 @@ GameObject:
   - component: {fileID: 5954935502496854131}
   - component: {fileID: 2591411823452737974}
   - component: {fileID: 3212133348035931198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_D_Receiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +949,7 @@ GameObject:
   - component: {fileID: 4031603771724420923}
   - component: {fileID: 24384451092155359}
   - component: {fileID: 6873321988903942341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_D_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,9 +1029,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4562116321870989269}
     m_Modifications:
+    - target: {fileID: 989401127897817722, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2803935906920708798, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
       propertyPath: m_Name
       value: SFX_MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803935906920708798, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8434581671741427306, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
       propertyPath: m_LocalScale.x
