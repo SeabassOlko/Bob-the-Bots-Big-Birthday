@@ -12,7 +12,6 @@ public class EnemyBossScript : Enemy
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] AudioClip gunShotClip;
 
-    [SerializeField] HealthBar healthBar;
     [SerializeField] GameObject bossCanvas;
 
     bool canShoot = true;
