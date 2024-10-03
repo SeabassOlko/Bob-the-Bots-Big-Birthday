@@ -131,6 +131,15 @@ public class PlayerController : MonoBehaviour
         }
 
         isDead = playerHealth.IsDead();
+
+        if (GetComponent<PlayerSize>().isSquished)
+        {
+            GetComponent<CharacterController>().radius = 0.3f;
+        }
+        else
+        {
+            GetComponent<CharacterController>().radius = 0.5f;
+        }
     }
 
     void MouseLookAround()
@@ -168,6 +177,7 @@ public class PlayerController : MonoBehaviour
         weapon.transform.SetPositionAndRotation(attachPoint.position, attachPoint.rotation);
         weapon.transform.SetParent(attachPoint);
         Physics.IgnoreCollision(GetComponent<Collider>(), weapon.GetComponent<Collider>());
+        GameObject.Find("Party_Crashers").GetComponent<PartyCrasherSpawner>().SpawnPartyCrashers();
     }
 
     private void OnCollisionEnter(Collision collision)

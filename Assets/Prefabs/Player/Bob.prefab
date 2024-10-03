@@ -423,7 +423,6 @@ GameObject:
   - component: {fileID: 4115521397161226712}
   - component: {fileID: 385357039832449549}
   - component: {fileID: 5584911363727417746}
-  - component: {fileID: 3050354702872261670}
   - component: {fileID: 6312342649731889747}
   - component: {fileID: 4212883513323153027}
   - component: {fileID: 1216537011582583232}
@@ -615,22 +614,6 @@ MonoBehaviour:
   damage: 10
   cooldownTime: 0.5
   ReticleCanvas: {fileID: 5523251619976480337}
---- !u!114 &3050354702872261670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5300928932785588644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916e0b74c355a284bb699a509757a574, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopPlunger: {fileID: 0}
-  squishAmount: 0.5
-  squishDuration: 0.5
-  returnDuration: 0.2
 --- !u!82 &6312342649731889747
 AudioSource:
   m_ObjectHideFlags: 0
