@@ -192,6 +192,22 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Vent"))
+        {
+            GetComponentInChildren<CameraCollision>().SwitchView(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Vent"))
+        {
+            GetComponentInChildren<CameraCollision>().SwitchView(false);
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
 
