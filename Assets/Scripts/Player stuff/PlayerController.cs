@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject weapon;
     public Transform attachPoint;
+    Vector3 attachPointOriginalAngle;
+    bool resetAttachAngle = true;
    
     public GameObject reticle;
 
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour
     
     //public PlayerHealth playerHealth;
     //private GameManager gameManager;
-    //private PlayerShoot playerShoot;
+    [SerializeField] PlayerShoot playerShoot;
 
     [SerializeField] private float acceleration = 2f;
     [SerializeField] private float deceleration = 2f;
@@ -44,9 +46,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        attachPointOriginalAngle = attachPoint.transform.eulerAngles;
         saveLoadManager = FindObjectOfType<SaveLoad>();
         cc = GetComponent<CharacterController>();
         //canvas.SetActive(false);
+        playerShoot = GetComponent<PlayerShoot>();
         gravity = Physics.gravity.y;
         cameraTransform = Camera.main.transform;
         anim = GetComponentInChildren<Animator>();
@@ -97,6 +101,21 @@ public class PlayerController : MonoBehaviour
         //anim.SetFloat("DirectionY", direction.y);
 
         // CheckEnemyVisibility(); (commented if not needed in this case)
+
+        if (anim.GetBool("Aiming"))
+        {
+            resetAttachAngle = false;
+            attachPoint.eulerAngles += new Vector3(0, -90, 0);
+            //Quaternion weaponAdjustment = attachPoint.transform.rotation;
+            //weaponAdjustment.eulerAngles += new Vector3( 0, -90, 0);
+
+            attachPoint.transform.rotation = Quaternion.LookRotation(cameraTransform.forward, Vector3.up); ;
+        }
+        else if (!resetAttachAngle)
+        {
+            resetAttachAngle = true;
+            attachPoint.eulerAngles -= attachPointOriginalAngle;
+        }
     }
 
     void MouseLookAround()
@@ -113,8 +132,6 @@ public class PlayerController : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 
-
-
     public void MoveStarted(InputAction.CallbackContext ctx)
     {
         direction = ctx.ReadValue<Vector2>();
@@ -127,26 +144,15 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Move Canceled");
     }
 
-
-
-
-
     private void HandleWeaponPickup(GameObject newWeapon)
     {
-   
-
         // Pick up the new weapon
         weapon = newWeapon;
+        playerShoot.SetMuzzleFlash(weapon.GetComponentInChildren<ParticleSystem>());
         weapon.GetComponent<Rigidbody>().isKinematic = true;
         weapon.transform.SetPositionAndRotation(attachPoint.position, attachPoint.rotation);
         weapon.transform.SetParent(attachPoint);
         Physics.IgnoreCollision(GetComponent<Collider>(), weapon.GetComponent<Collider>());
-        reticle.SetActive(true);
-        anim.SetBool("Aiming", true);
-
- 
-
-     
     }
 
     private void OnCollisionEnter(Collision collision)
