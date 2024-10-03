@@ -1015,6 +1015,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bob
       objectReference: {fileID: 0}
+    - target: {fileID: 7051774051148436404, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051774051148436404, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8521004954394797780, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.012606144

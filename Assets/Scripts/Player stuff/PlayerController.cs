@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask enemyLayerMask;
 
     
-    //public PlayerHealth playerHealth;
+    [SerializeField]PlayerHealth playerHealth;
     //private GameManager gameManager;
     [SerializeField] PlayerShoot playerShoot;
 
@@ -41,9 +41,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float deceleration = 2f;
     private float currentSpeed = 0f;
 
+    [SerializeField] Vector3 lastCheckpoint;
+
 
     public List<string> inventoryItems = new List<string>();
     [SerializeField] private SaveLoad saveLoadManager;
+
+    bool isDead = false;
 
     void Start()
     {
@@ -55,7 +59,12 @@ public class PlayerController : MonoBehaviour
         gravity = Physics.gravity.y;
         cameraTransform = Camera.main.transform;
         anim = GetComponentInChildren<Animator>();
-       // playerHealth = GetComponent<PlayerHealth>();
+        playerHealth = GetComponent<PlayerHealth>();
+        if (lastCheckpoint == null)
+        {
+            Debug.Log("Transform set to starting transform");
+            lastCheckpoint = transform.position;
+        }
     }
 
     private void OnApplicationFocus(bool focus)
@@ -66,6 +75,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (playerHealth.IsDead()) return;
         // Rotate the player to match the camera's Y rotation
         MouseLookAround();
 
@@ -119,6 +129,8 @@ public class PlayerController : MonoBehaviour
             resetAttachAngle = true;
             attachPoint.eulerAngles -= attachPointOriginalAngle;
         }
+
+        isDead = playerHealth.IsDead();
     }
 
     void MouseLookAround()
@@ -207,13 +219,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    public void TakeDamage(float damage)
+    void Death()
     {
-        //playerHealth.TakeDamage(damage);
+        StartCoroutine(Respawn());
     }
 
-    public void Heal(float amount)
+    IEnumerator Respawn()
+    {
+        anim.SetTrigger("Death");
+        yield return new WaitForSeconds(2.1f);
+        cc.transform.position = lastCheckpoint;
+        Physics.SyncTransforms();
+        playerHealth.ResetHealth();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (playerHealth.IsDead())
+            return;
+
+        playerHealth.TakeDamage(damage);
+        if (playerHealth.IsDead())
+            Death();
+    }
+
+    public void Heal(int amount)
     {
         //playerHealth.Heal(amount);
     }
