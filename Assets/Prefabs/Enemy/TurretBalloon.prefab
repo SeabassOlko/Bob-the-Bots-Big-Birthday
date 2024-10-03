@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 4138299089603209196}
   - component: {fileID: 6725618495225060644}
   - component: {fileID: 8042082904550015917}
+  - component: {fileID: 2451814687901022327}
   m_Layer: 6
   m_Name: TurretBalloon
   m_TagString: Enemy
@@ -506,6 +507,19 @@ MonoBehaviour:
     m_Bits: 1
   pointOfView: {fileID: 4280005563493515977}
   rangetarget: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
+--- !u!114 &2451814687901022327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002115532768564252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cd28d11678b4f4cb82fcf6c881bb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
 --- !u!1 &2419086116499548439
 GameObject:
   m_ObjectHideFlags: 0
