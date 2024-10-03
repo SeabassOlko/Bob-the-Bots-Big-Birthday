@@ -76,7 +76,7 @@ AudioSource:
   m_GameObject: {fileID: 452437058000063018}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7128067719386893152, guid: 204ae77320b536d459d12c2126255a73, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -197,13 +197,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popParticles: {fileID: 0}
   MAX_HEALTH: 10
-  drop: {fileID: 0}
   playerCenter: {fileID: 0}
+  balloonCenterMass: {fileID: 0}
   projectile: {fileID: 7454539918083642158, guid: c1985491d91e8b74f8ca9fc4967238d8, type: 3}
   projectileSpawnPoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
-  hurtClip: {fileID: 0}
-  attackClip: {fileID: 0}
+  gunShotClip: {fileID: 0}
 --- !u!135 &382081441042191343
 SphereCollider:
   m_ObjectHideFlags: 0

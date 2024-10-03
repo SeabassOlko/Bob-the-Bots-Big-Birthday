@@ -6,20 +6,16 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     protected Animator anim;
-    [SerializeField] protected ParticleSystem popParticles;
+    [SerializeField] protected GameObject popParticles;
 
     protected float health;
     [SerializeField] protected float MAX_HEALTH;
-
-    [SerializeField] protected GameObject drop;
 
     protected VisionConeScript enemyVision;
 
     protected AudioSource enemyAudioSource;
 
     protected bool isDead = false;
-
-
 
     // Start is called before the first frame update
     public virtual void Start()
