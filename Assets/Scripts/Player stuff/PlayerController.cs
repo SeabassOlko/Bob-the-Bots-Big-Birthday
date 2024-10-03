@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public float gravity;
     [SerializeField] private Vector2 direction;
+    Vector3 transformDirection;
 
     Animator anim;
 
@@ -95,8 +96,10 @@ public class PlayerController : MonoBehaviour
 
         cc.Move(horizontalMoveDir);
 
+        transformDirection = transform.InverseTransformDirection(cc.velocity);
         // Update Blend Tree parameters
-        anim.SetFloat("Forward/Back Speed", currentSpeed);
+        anim.SetFloat("Forward/Back Speed", transformDirection.z);
+        anim.SetFloat("Left/Right Speed", transformDirection.x);
         //anim.SetFloat("DirectionX", direction.x);
         //anim.SetFloat("DirectionY", direction.y);
 
@@ -116,6 +119,9 @@ public class PlayerController : MonoBehaviour
             resetAttachAngle = true;
             attachPoint.eulerAngles -= attachPointOriginalAngle;
         }
+
+       // Debug.Log("CC Velocity X: " + cc.velocity.x + " and CC Velocity Z: " + cc.velocity.z);
+        Debug.Log("Invers Transform Direction: " + transform.InverseTransformDirection(cc.velocity));
     }
 
     void MouseLookAround()
