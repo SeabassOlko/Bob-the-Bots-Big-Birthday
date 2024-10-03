@@ -189,6 +189,11 @@ public class PlayerController : MonoBehaviour
         {
             SetCheckpoint(collision.transform);
         }
+        else if (collision.gameObject.CompareTag("Weapon"))
+        {
+            Debug.Log("Weapon collision detected. Picking up...");
+            HandleWeaponPickup(collision.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider collision)
