@@ -7,6 +7,7 @@ public class EnemyPatroller : Enemy
 {
     bool canShoot = true;
     [SerializeField] Transform playerCenter;
+    [SerializeField] GameObject balloonCenterMass;
 
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject projectileSpawnPoint;
@@ -15,7 +16,7 @@ public class EnemyPatroller : Enemy
     EnemyMovement movement;
     [SerializeField] float stopAndShootDistance;
     [SerializeField] Transform player;
-    [SerializeField] AudioClip attackClip;
+    [SerializeField] AudioClip gunShotClip;
     [SerializeField] ParticleSystem sparklerParticles;
 
     // Start is called before the first frame update
@@ -50,8 +51,6 @@ public class EnemyPatroller : Enemy
         }
         else
             movement.Idle();
-
-        //anim.SetFloat("Speed", transform.TransformDirection(transform.position).magnitude);
     }
 
     public override void hit(int damage)
@@ -60,30 +59,27 @@ public class EnemyPatroller : Enemy
 
         if (health <= 0)
         {
-            death();
+            Death();
         }
     }
 
     IEnumerator Shoot()
     {
         canShoot = false;
-        //anim.SetTrigger("Shoot");
-        //yield return new WaitForSeconds(0.43f);
-        //enemyAudioSource.PlayOneShot(attackClip);
+        enemyAudioSource.PlayOneShot(gunShotClip);
         muzzleFlash.Play();
         Instantiate(projectile, projectileSpawnPoint.transform.position, Quaternion.LookRotation(playerCenter.position - projectileSpawnPoint.transform.position, Vector3.up));
         yield return new WaitForSeconds(2f);
         canShoot = true;
     }
 
-    void death()
+    void Death()
     {
         health = 0;
         isDead = true;
         movement.isDead = isDead;
-        popParticles.Play();
+        Instantiate(popParticles, balloonCenterMass.transform.position, balloonCenterMass.transform.rotation);
         movement.stopMove();
-        anim.SetTrigger("Death");
         Destroy(gameObject);
     }
 }
