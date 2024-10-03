@@ -49,7 +49,6 @@ public class EnemyMovement : MonoBehaviour
 
                 target = path[pathIndex].transform;
             }
-
         }
 
         if (enemyState == EnemyState.Chase)

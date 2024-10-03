@@ -10,6 +10,7 @@ public class EnemyBomber : Enemy
     [SerializeField] float explosionRadius = 3f;
 
     [SerializeField] GameObject explosionSFX;
+    [SerializeField] AudioClip explosionClip;
     [SerializeField] GameObject balloonCenterMass;
 
     EnemyMovement movement;
@@ -57,14 +58,6 @@ public class EnemyBomber : Enemy
         }
     }
 
-    public override void hitPlayer(Collider player)
-    {
-        base.hitPlayer(player);
-
-        //player.gameObject.GetComponent<PlayerController>().Hurt(damage);
-
-    }
-
     IEnumerator BlowUp()
     {
         yield return new WaitForSeconds(4.0f);
@@ -83,9 +76,8 @@ public class EnemyBomber : Enemy
         health = 0;
         isDead = true;
         movement.isDead = isDead;
-        popParticles.Play();
+        Instantiate(popParticles, balloonCenterMass.transform.position, balloonCenterMass.transform.rotation);
         movement.stopMove();
-        anim.SetTrigger("Death");
         Destroy(gameObject);
     }
 }

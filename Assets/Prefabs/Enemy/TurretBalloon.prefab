@@ -317,6 +317,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4709444235212221798}
+  - {fileID: 4280005563493515977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &6140195353468314410
@@ -328,7 +329,7 @@ AudioSource:
   m_GameObject: {fileID: 2002115532768564252}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7128067719386893152, guid: 204ae77320b536d459d12c2126255a73, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -427,15 +428,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32ece003f7102a4c859e7d44350f7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popParticles: {fileID: 0}
-  MAX_HEALTH: 0
-  drop: {fileID: 0}
+  popParticles: {fileID: 9101598619199501188, guid: ac209381dfdb8e7448ed9f42efafad5b, type: 3}
+  MAX_HEALTH: 5
   playerCenter: {fileID: 0}
+  balloonCenterMass: {fileID: 3653106916198375800}
   projectile: {fileID: 7454539918083642158, guid: c1985491d91e8b74f8ca9fc4967238d8, type: 3}
   projectileSpawnPoint: {fileID: 1037482800888216430}
   muzzleFlash: {fileID: 2843838699817068061}
-  hurtClip: {fileID: 0}
-  attackClip: {fileID: 0}
+  gunShotClip: {fileID: 8300000, guid: 3826f9e485c60c94d956219fadb8d1c4, type: 3}
 --- !u!54 &4138299089603209196
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -708,6 +708,37 @@ Transform:
   - {fileID: 3254908568862412906}
   m_Father: {fileID: 4709444235212221798}
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 90}
+--- !u!1 &3653106916198375800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4280005563493515977}
+  m_Layer: 0
+  m_Name: BalloonCenterMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4280005563493515977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653106916198375800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6535086884000446536}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4092436647402811428
 GameObject:
   m_ObjectHideFlags: 0
