@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 3709983214954964591}
   m_Layer: 0
   m_Name: PatrolBalloon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   projectile: {fileID: 7454539918083642158, guid: c1985491d91e8b74f8ca9fc4967238d8, type: 3}
   projectileSpawnPoint: {fileID: 967459066284246062}
   muzzleFlash: {fileID: 5645749948142634657}
-  stopAndShootDistance: 0
+  stopAndShootDistance: 8
   player: {fileID: 0}
   gunShotClip: {fileID: 8300000, guid: 3826f9e485c60c94d956219fadb8d1c4, type: 3}
   sparklerParticles: {fileID: 0}

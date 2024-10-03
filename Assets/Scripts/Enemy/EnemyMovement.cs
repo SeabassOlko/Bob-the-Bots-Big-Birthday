@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        playerTransform = GameObject.Find("Bob").transform;
         if (distThreshold <= 0) distThreshold = 0.5f;
     }
 

@@ -15,7 +15,6 @@ public class EnemyPatroller : Enemy
 
     EnemyMovement movement;
     [SerializeField] float stopAndShootDistance;
-    [SerializeField] Transform player;
     [SerializeField] AudioClip gunShotClip;
     [SerializeField] ParticleSystem sparklerParticles;
 
@@ -26,6 +25,7 @@ public class EnemyPatroller : Enemy
 
         enemyAudioSource = GetComponent<AudioSource>();
         movement = GetComponent<EnemyMovement>();
+        playerCenter = GameObject.Find("BobCenterMass").transform;
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class EnemyPatroller : Enemy
         {
             movement.chase();
 
-            if (Vector3.Distance(transform.position, player.position) <= stopAndShootDistance)
+            if (Vector3.Distance(transform.position, playerCenter.position) <= stopAndShootDistance)
             {
                 movement.stopMove();
                 transform.LookAt(playerCenter.position);

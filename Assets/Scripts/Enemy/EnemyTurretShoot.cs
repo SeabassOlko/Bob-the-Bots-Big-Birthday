@@ -21,6 +21,7 @@ public class EnemyTurretShoot : Enemy
         base.Start();
         enemyAudioSource = GetComponent<AudioSource>();
         health = MAX_HEALTH;
+        playerCenter = GameObject.Find("BobCenterMass").transform;
     }
 
     // Update is called once per frame
