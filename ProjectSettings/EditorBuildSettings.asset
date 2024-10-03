@@ -12,12 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene.unity
     guid: 26782a95fb6e8844abdd6a9ab6d915fb
   - enabled: 1
+    path: Assets/Scenes/FUNTIME.unity
+    guid: d1cb77b57facc174294adf08d06d8a28
+  - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 9628d5fffc52a8b41a5854426eb4d6ba
-  - enabled: 1
-    path: Assets/Scenes/FUNTIME.unity
-    guid: d1cb77b57facc174294adf08d06d8a28
   m_configObjects: {}
