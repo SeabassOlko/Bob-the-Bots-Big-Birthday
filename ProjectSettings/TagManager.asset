@@ -13,6 +13,7 @@ TagManager:
   - Checkpoint
   - Enemy
   - Post
+  - Vent
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3767635048069610333}
   m_Layer: 0
   m_Name: Wall3
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3833742455955288952}
   m_Layer: 0
   m_Name: Wall1
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: -2571846222458269211}
   m_Layer: 0
   m_Name: Profile1
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 3204223276412139459}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 1255182008607484954}
   m_Layer: 0
   m_Name: Floor2
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 1435966498123609898}
   m_Layer: 0
   m_Name: Wall2
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 8140544684049021802}
   m_Layer: 0
   m_Name: SideFloor1 (3)
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 2583691658412623550}
   m_Layer: 0
   m_Name: SideFloor2 (2)
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 5370875734426175595}
   m_Layer: 0
   m_Name: Bar
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 2701654156750531321}
   m_Layer: 0
   m_Name: Floor4 (3)
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 8263751886554050707}
   m_Layer: 0
   m_Name: SideFloor1 (2)
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 3638189662858404572}
   m_Layer: 0
   m_Name: SideFloor2 (3)
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1272,7 +1272,7 @@ GameObject:
   - component: {fileID: 8243709938327646104}
   m_Layer: 0
   m_Name: Bar
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 9210811891196637129}
   m_Layer: 0
   m_Name: SideWall1.1
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1461,7 +1461,7 @@ GameObject:
   - component: {fileID: 9197887353360767093}
   m_Layer: 0
   m_Name: Floor4 (2)
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 3661980688750496846}
   m_Layer: 0
   m_Name: Floor5 (1)
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1668,6 +1668,10 @@ PrefabInstance:
     - target: {fileID: 5118302876145007528, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
       propertyPath: m_Name
       value: SideWall1.1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118302876145007528, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
+      propertyPath: m_TagString
+      value: Vent
       objectReference: {fileID: 0}
     - target: {fileID: 5118302876145035144, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
       propertyPath: m_RootOrder
@@ -1809,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall12 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6421693393088177703, guid: cc55393986bef4d3a8307ae8b90d9e96, type: 3}
+      propertyPath: m_TagString
+      value: Vent
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1860,6 +1868,10 @@ PrefabInstance:
     - target: {fileID: 5118302876145007528, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
       propertyPath: m_Name
       value: SideWall1.1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118302876145007528, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
+      propertyPath: m_TagString
+      value: Vent
       objectReference: {fileID: 0}
     - target: {fileID: 5118302876145035144, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
       propertyPath: m_RootOrder
@@ -1957,6 +1969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopWall4
       objectReference: {fileID: 0}
+    - target: {fileID: 918264871442892368, guid: 397e71ac2fe4f4d959524578cfabd45b, type: 3}
+      propertyPath: m_TagString
+      value: Vent
+      objectReference: {fileID: 0}
     - target: {fileID: 4242749377623692421, guid: 397e71ac2fe4f4d959524578cfabd45b, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2022,6 +2038,10 @@ PrefabInstance:
     - target: {fileID: 918264871442892368, guid: 397e71ac2fe4f4d959524578cfabd45b, type: 3}
       propertyPath: m_Name
       value: TopWall4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 918264871442892368, guid: 397e71ac2fe4f4d959524578cfabd45b, type: 3}
+      propertyPath: m_TagString
+      value: Vent
       objectReference: {fileID: 0}
     - target: {fileID: 4242749377623692421, guid: 397e71ac2fe4f4d959524578cfabd45b, type: 3}
       propertyPath: m_RootOrder
@@ -2089,6 +2109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SideWall1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5118302876145007528, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
+      propertyPath: m_TagString
+      value: Vent
+      objectReference: {fileID: 0}
     - target: {fileID: 5118302876145035144, guid: 6b73bd9b0c9a248c89e59f013f13eb6e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2154,6 +2178,10 @@ PrefabInstance:
     - target: {fileID: 4515203732076682928, guid: 025248aa7affe4e249d1ecb153635008, type: 3}
       propertyPath: m_Name
       value: Light2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515203732076682928, guid: 025248aa7affe4e249d1ecb153635008, type: 3}
+      propertyPath: m_TagString
+      value: Vent
       objectReference: {fileID: 0}
     - target: {fileID: 6970021020066904098, guid: 025248aa7affe4e249d1ecb153635008, type: 3}
       propertyPath: m_RootOrder
