@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource), typeof(VisionConeScript))]
 public abstract class Enemy : MonoBehaviour
 {
+    [SerializeField]HealthBar healthBar;
     protected Animator anim;
     [SerializeField] protected GameObject popParticles;
 
