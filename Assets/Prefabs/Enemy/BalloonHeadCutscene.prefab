@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8134648099785947101}
   - component: {fileID: 382081441042191343}
   - component: {fileID: 592334910922131827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BalloonHeadCutscene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,6 +183,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 1
+  pointOfView: {fileID: 0}
+  rangetarget: {fileID: 0}
 --- !u!114 &8134648099785947101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +249,7 @@ GameObject:
   - component: {fileID: 8764227492588885471}
   - component: {fileID: 5188141756257308238}
   - component: {fileID: 403767603320799999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye Whites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +332,7 @@ GameObject:
   - component: {fileID: 6270789211597785397}
   - component: {fileID: 995122317724565695}
   - component: {fileID: 2730874621645298839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye Whites (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +415,7 @@ GameObject:
   - component: {fileID: 6550453037049196650}
   - component: {fileID: 7821163210906269799}
   - component: {fileID: 7024313580414337753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Balloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

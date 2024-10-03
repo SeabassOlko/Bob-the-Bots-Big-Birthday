@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2072550479950597509}
   - component: {fileID: 6596429628455811467}
   - component: {fileID: 3939774485502988761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KamikazeBalloon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   player: {fileID: 0}
   attackClip: {fileID: 0}
   sparklerParticles: {fileID: 5373659046621554430}
+  patrolable: 0
 --- !u!82 &6401983078107596528
 AudioSource:
   m_ObjectHideFlags: 0
@@ -267,6 +268,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 1
+  pointOfView: {fileID: 2864219815026257335}
+  rangetarget: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
 --- !u!1 &3518310523895551549
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +282,7 @@ GameObject:
   - component: {fileID: 201566748728038521}
   - component: {fileID: 4075501013755683072}
   - component: {fileID: 8481253712472333495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RedBalloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +385,7 @@ GameObject:
   - component: {fileID: 5231716745595269660}
   - component: {fileID: 2105141623805372017}
   - component: {fileID: 6818347872471699806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +468,7 @@ GameObject:
   - component: {fileID: 4288563025204436310}
   - component: {fileID: 5373659046621554430}
   - component: {fileID: 190341238092272311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sparker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5295,7 +5298,7 @@ GameObject:
   - component: {fileID: 3036479027884396094}
   - component: {fileID: 7857142450280218832}
   - component: {fileID: 5611657862194455140}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BezierCurve.001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5378,7 +5381,7 @@ GameObject:
   - component: {fileID: 8978066207923974103}
   - component: {fileID: 1637763329714972131}
   - component: {fileID: 758946332206794426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BezierCurve.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5459,7 +5462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2864219815026257335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BalloonCenterMass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5492,7 +5495,7 @@ GameObject:
   - component: {fileID: 8322268512889610638}
   - component: {fileID: 8291526040600378864}
   - component: {fileID: 7026411747588153774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

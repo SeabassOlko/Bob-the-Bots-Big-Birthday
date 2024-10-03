@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8304083330955960564}
   - component: {fileID: 1618330380260098063}
   - component: {fileID: 1667199404901539798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_C_Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4558743732084791266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4942018696243458241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BalloonCenterMass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 5737924103612058193}
   - component: {fileID: 1779736704560075394}
   - component: {fileID: 3709983214954964591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PatrolBalloon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   isDead: 0
-  enemyState: 0
+  enemyState: 2
   path: []
   pathIndex: 0
   distThreshold: 0
@@ -294,6 +294,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 1
+  pointOfView: {fileID: 4942018696243458241}
+  rangetarget: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
 --- !u!82 &1779736704560075394
 AudioSource:
   m_ObjectHideFlags: 0
@@ -410,9 +412,9 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 967459066284246062}
   muzzleFlash: {fileID: 5645749948142634657}
   stopAndShootDistance: 8
-  player: {fileID: 0}
   gunShotClip: {fileID: 8300000, guid: 3826f9e485c60c94d956219fadb8d1c4, type: 3}
   sparklerParticles: {fileID: 0}
+  patrolable: 0
 --- !u!1 &2267506012816566921
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +426,7 @@ GameObject:
   - component: {fileID: 7355121457214134675}
   - component: {fileID: 2893956835243715526}
   - component: {fileID: 6592610568441619487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +509,7 @@ GameObject:
   - component: {fileID: 1096660025738583791}
   - component: {fileID: 4258127149439302869}
   - component: {fileID: 4126053379992350161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_C_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +592,7 @@ GameObject:
   - component: {fileID: 3392443648238959815}
   - component: {fileID: 5803276116916302254}
   - component: {fileID: 1610506565394336568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_C_Receiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +675,7 @@ GameObject:
   - component: {fileID: 6709598700488386287}
   - component: {fileID: 4692203326906157059}
   - component: {fileID: 8452137986638232047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EyeWhites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +759,7 @@ GameObject:
   - component: {fileID: 3326979893728209962}
   - component: {fileID: 7798686123171745094}
   - component: {fileID: 5099405612881766061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_C_Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +842,7 @@ GameObject:
   - component: {fileID: 774309127754877842}
   - component: {fileID: 3595072410495705671}
   - component: {fileID: 3176270158140186218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2373405911424155552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,7 +963,7 @@ GameObject:
   - component: {fileID: 3993549455196666582}
   - component: {fileID: 7255556811761685754}
   - component: {fileID: 7222381955413589316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_C_BarrelGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1046,7 @@ GameObject:
   - component: {fileID: 3575369007460722695}
   - component: {fileID: 8994963490400903560}
   - component: {fileID: 6859191303046186711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol_C_Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1129,7 @@ GameObject:
   - component: {fileID: 1947793832742722645}
   - component: {fileID: 4112127443665706321}
   - component: {fileID: 6509487120220149287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1213,7 @@ GameObject:
   - component: {fileID: 1105563426420879358}
   - component: {fileID: 6941064369831863721}
   - component: {fileID: 3578518126949702866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenBalloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1316,7 @@ GameObject:
   - component: {fileID: 7543468233248585589}
   - component: {fileID: 7542612933624522699}
   - component: {fileID: 4327649290494180594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BezierCurve.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,9 +1396,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4558743732084791266}
     m_Modifications:
+    - target: {fileID: 989401127897817722, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2803935906920708798, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
       propertyPath: m_Name
       value: SFX_MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803935906920708798, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8434581671741427306, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
       propertyPath: m_LocalPosition.x
