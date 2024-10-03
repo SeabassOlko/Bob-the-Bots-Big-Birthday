@@ -143,10 +143,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8521004954394797780}
   - component: {fileID: 6044766661270282517}
+  - component: {fileID: 6693147097555965312}
   - component: {fileID: 1016275524247183585}
   - component: {fileID: 4115521397161226712}
   - component: {fileID: 385357039832449549}
   - component: {fileID: 5584911363727417746}
+  - component: {fileID: 3050354702872261670}
   m_Layer: 3
   m_Name: Bob
   m_TagString: Player
@@ -195,6 +197,20 @@ CapsuleCollider:
   m_Height: 2.075003
   m_Direction: 1
   m_Center: {x: 0, y: 1.0297638, z: 0}
+--- !u!114 &6693147097555965312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300928932785588644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc59c3826797e5145875dbe03ce9162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSize: {x: 0, y: 0, z: 0}
+  isSquished: 0
 --- !u!114 &1016275524247183585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5.7
-  mouseSensitivity: 300
+  mouseSensitivity: 150
   xRotation: 3.91
   jumpForce: 3
   gravity: -9.81
@@ -315,6 +331,22 @@ MonoBehaviour:
   bulletSpeed: 20
   shootEffect: {fileID: 0}
   Gunshot: {fileID: 0}
+--- !u!114 &3050354702872261670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300928932785588644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916e0b74c355a284bb699a509757a574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TopPlunger: {fileID: 0}
+  squishAmount: 0.5
+  squishDuration: 0.5
+  returnDuration: 0.2
 --- !u!1 &6671594617621056192
 GameObject:
   m_ObjectHideFlags: 0
