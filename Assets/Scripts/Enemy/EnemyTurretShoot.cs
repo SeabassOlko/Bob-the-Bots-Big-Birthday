@@ -5,13 +5,12 @@ using UnityEngine;
 public class EnemyTurretShoot : Enemy
 {
     [SerializeField] Transform playerCenter;
+    [SerializeField] GameObject balloonCenterMass;
 
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject projectileSpawnPoint;
     [SerializeField] ParticleSystem muzzleFlash;
-
-    [SerializeField] AudioClip hurtClip;
-    [SerializeField] AudioClip attackClip;
+    [SerializeField] AudioClip gunShotClip;
 
 
     bool canShoot = true;
@@ -42,16 +41,14 @@ public class EnemyTurretShoot : Enemy
     public void death()
     {
         isDead = true;
-        popParticles.Play();
-        Destroy(gameObject, 0.5f);
+        Instantiate(popParticles, balloonCenterMass.transform.position, balloonCenterMass.transform.rotation);
+        Destroy(gameObject);
     }
 
     IEnumerator Shoot()
     {
         canShoot = false;
-        //anim.SetTrigger("Shoot");
-        //yield return new WaitForSeconds(0.43f);
-        //enemyAudioSource.PlayOneShot(attackClip);
+        enemyAudioSource.PlayOneShot(gunShotClip);
         muzzleFlash.Play();
         Instantiate(projectile, projectileSpawnPoint.transform.position, Quaternion.LookRotation(playerCenter.position - projectileSpawnPoint.transform.position, Vector3.up));
         yield return new WaitForSeconds(2f);

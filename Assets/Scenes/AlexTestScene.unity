@@ -960,11 +960,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 548694274}
   m_SourcePrefab: {fileID: 100100000, guid: 669ece264731707449c5c761b97239ec, type: 3}
---- !u!1 &705983003 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
-  m_PrefabInstance: {fileID: 1939945222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &717247869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,42 +1534,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1016275524247183585, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
   m_PrefabInstance: {fileID: 1939945222}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705983003}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4a0b2b135465e24c89743d092c8ec37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1711411088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705983003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916e0b74c355a284bb699a509757a574, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopPlunger: {fileID: 0}
-  squishAmount: 0.5
-  squishDuration: 0.5
-  returnDuration: 0.2
---- !u!114 &1711411093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705983003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc59c3826797e5145875dbe03ce9162d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalSize: {x: 0, y: 0, z: 0}
-  isSquished: 0
 --- !u!1 &1759331104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1721,10 +1686,6 @@ PrefabInstance:
       propertyPath: saveLoadManager
       value: 
       objectReference: {fileID: 859983102}
-    - target: {fileID: 1016275524247183585, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
-      propertyPath: mouseSensitivity
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
       propertyPath: m_Name
       value: Bob
@@ -1776,13 +1737,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1711411093}
-    - targetCorrespondingSourceObject: {fileID: 5300928932785588644, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1711411088}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2744c839dcef4b94a8c6db0fb38a966c, type: 3}
 --- !u!1 &1987014707
 GameObject:
