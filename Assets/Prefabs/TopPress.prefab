@@ -761,6 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TopPlunger: {fileID: 0}
-  squishAmount: 0.2
+  squishAmount: 0.4
   squishDuration: 5
   returnDuration: 0.2
