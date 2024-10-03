@@ -26,6 +26,7 @@ public class EnemyBomber : Enemy
 
         enemyAudioSource = GetComponent<AudioSource>();
         movement = GetComponent<EnemyMovement>();
+        player = GameObject.Find("Bob").transform;
     }
 
     // Update is called once per frame

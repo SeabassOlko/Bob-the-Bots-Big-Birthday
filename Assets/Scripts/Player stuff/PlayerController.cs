@@ -119,9 +119,6 @@ public class PlayerController : MonoBehaviour
             resetAttachAngle = true;
             attachPoint.eulerAngles -= attachPointOriginalAngle;
         }
-
-       // Debug.Log("CC Velocity X: " + cc.velocity.x + " and CC Velocity Z: " + cc.velocity.z);
-        Debug.Log("Invers Transform Direction: " + transform.InverseTransformDirection(cc.velocity));
     }
 
     void MouseLookAround()
