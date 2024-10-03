@@ -69,8 +69,7 @@ public class EnemyBomber : Enemy
         Instantiate(explosionSFX, balloonCenterMass.transform.position, balloonCenterMass.transform.rotation);
         if (Vector3.Distance(transform.position, player.position) <= explosionRadius)
         {
-            Debug.Log("Player hit by explosion, takes " + damage + " damage");
-            //hurt player
+            player.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
         }
         Destroy(gameObject);
     }

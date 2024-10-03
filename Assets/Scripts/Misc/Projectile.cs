@@ -22,8 +22,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //other.GetComponent<PlayerController>().Hurt(damage);
-            Debug.Log("Player hit, taking " + damage + " damage");
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
             Destroy(gameObject);
         }
         else
