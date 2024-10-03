@@ -205,8 +205,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 6.7063704, z: 2}
-  m_Center: {x: 0, y: 2.853185, z: 0}
+  m_Size: {x: 2, y: 5.9936533, z: 2}
+  m_Center: {x: 0, y: 3.2095451, z: 0}
 --- !u!54 &8586964351962225208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   isDead: 0
-  enemyState: 2
+  enemyState: 1
   path: []
   pathIndex: 0
   distThreshold: 0
@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826755e0b0aeef4bb2d69617ed7c8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   popParticles: {fileID: 9101598619199501188, guid: ac209381dfdb8e7448ed9f42efafad5b, type: 3}
   MAX_HEALTH: 5
   playerCenter: {fileID: 0}
@@ -414,7 +415,7 @@ MonoBehaviour:
   stopAndShootDistance: 8
   gunShotClip: {fileID: 8300000, guid: 3826f9e485c60c94d956219fadb8d1c4, type: 3}
   sparklerParticles: {fileID: 0}
-  patrolable: 0
+  patrolable: 1
 --- !u!1 &2267506012816566921
 GameObject:
   m_ObjectHideFlags: 0

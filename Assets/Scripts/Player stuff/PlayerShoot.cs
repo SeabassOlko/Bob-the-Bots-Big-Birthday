@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (playerController.weapon != null)
+        if (playerController.weapon != null && GetComponent<PlayerSize>().isSquished == true)
         {
             // Handle aiming when the right mouse button is held down
             if (Input.GetMouseButton(1))

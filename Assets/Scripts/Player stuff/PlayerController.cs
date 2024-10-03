@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
         weapon.transform.SetPositionAndRotation(attachPoint.position, attachPoint.rotation);
         weapon.transform.SetParent(attachPoint);
         Physics.IgnoreCollision(GetComponent<Collider>(), weapon.GetComponent<Collider>());
-        //GameObject.Find("Party_Crashers").GetComponent<PartyCrasherSpawner>().SpawnPartyCrashers();
+        GameObject.Find("Party_Crashers").GetComponent<PartyCrasherSpawner>().SpawnPartyCrashers();
     }
 
     private void OnCollisionEnter(Collision collision)
