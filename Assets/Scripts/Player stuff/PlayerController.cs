@@ -59,11 +59,7 @@ public class PlayerController : MonoBehaviour
         cameraTransform = Camera.main.transform;
         anim = GetComponentInChildren<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
-        if (lastCheckpoint == null)
-        {
-            Debug.Log("Transform set to starting transform");
-            lastCheckpoint = transform.position;
-        }
+        lastCheckpoint = transform.position;
     }
 
     private void OnApplicationFocus(bool focus)
@@ -188,6 +184,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Vent"))
         {
             GetComponentInChildren<CameraCollision>().SwitchView(true);
+        }
+        else if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            SetCheckpoint(collision.transform);
         }
     }
 
