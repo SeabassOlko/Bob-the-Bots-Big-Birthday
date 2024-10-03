@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
 
     
     [SerializeField]PlayerHealth playerHealth;
-    //private GameManager gameManager;
     [SerializeField] PlayerShoot playerShoot;
 
     [SerializeField] private float acceleration = 2f;
@@ -110,17 +109,11 @@ public class PlayerController : MonoBehaviour
         // Update Blend Tree parameters
         anim.SetFloat("Forward/Back Speed", transformDirection.z);
         anim.SetFloat("Left/Right Speed", transformDirection.x);
-        //anim.SetFloat("DirectionX", direction.x);
-        //anim.SetFloat("DirectionY", direction.y);
-
-        // CheckEnemyVisibility(); (commented if not needed in this case)
 
         if (anim.GetBool("Aiming"))
         {
             resetAttachAngle = false;
             attachPoint.eulerAngles += new Vector3(0, -90, 0);
-            //Quaternion weaponAdjustment = attachPoint.transform.rotation;
-            //weaponAdjustment.eulerAngles += new Vector3( 0, -90, 0);
 
             attachPoint.transform.rotation = Quaternion.LookRotation(cameraTransform.forward, Vector3.up); ;
         }
@@ -177,7 +170,7 @@ public class PlayerController : MonoBehaviour
         weapon.transform.SetPositionAndRotation(attachPoint.position, attachPoint.rotation);
         weapon.transform.SetParent(attachPoint);
         Physics.IgnoreCollision(GetComponent<Collider>(), weapon.GetComponent<Collider>());
-        GameObject.Find("Party_Crashers").GetComponent<PartyCrasherSpawner>().SpawnPartyCrashers();
+        //GameObject.Find("Party_Crashers").GetComponent<PartyCrasherSpawner>().SpawnPartyCrashers();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -188,8 +181,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Weapon collision detected. Picking up...");
             HandleWeaponPickup(collision.gameObject);
         }
-
-
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -269,11 +260,9 @@ public class PlayerController : MonoBehaviour
             Death();
     }
 
-    public void Heal(int amount)
+    public void SetCheckpoint(Transform checkpoint)
     {
-        //playerHealth.Heal(amount);
+        lastCheckpoint = checkpoint.position;
     }
-
-
 
 }
