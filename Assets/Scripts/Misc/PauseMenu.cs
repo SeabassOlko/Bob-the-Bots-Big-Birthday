@@ -65,6 +65,13 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        SceneManager.LoadScene("MainMenu");
+
+#if UNITY_EDITOR
+        // Stop play mode in the editor
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // Quit the application
+        Application.Quit();
+#endif
     }
 }
