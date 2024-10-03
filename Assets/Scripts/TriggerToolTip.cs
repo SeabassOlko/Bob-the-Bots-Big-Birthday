@@ -35,4 +35,5 @@ public class ChangeTextOnTrigger : MonoBehaviour
             bgColor.SetActive(false);
         }
     }
+
 }

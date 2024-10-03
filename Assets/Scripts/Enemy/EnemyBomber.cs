@@ -19,6 +19,8 @@ public class EnemyBomber : Enemy
     [SerializeField] AudioClip attackClip;
     [SerializeField] ParticleSystem sparklerParticles;
 
+    [SerializeField] bool patrolable = false;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -26,6 +28,7 @@ public class EnemyBomber : Enemy
 
         enemyAudioSource = GetComponent<AudioSource>();
         movement = GetComponent<EnemyMovement>();
+        player = GameObject.Find("Bob").transform;
     }
 
     // Update is called once per frame
@@ -44,6 +47,8 @@ public class EnemyBomber : Enemy
                 movement.stopMove();
             }
         }
+        else if (patrolable)
+            movement.patrol();
         else
             movement.Idle();
     }

@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform offset;
-    public float bulletSpeed = 20.0f;
 
     private PlayerController playerController;
     private Animator anim;
 
-    public ParticleSystem shootEffect;
-    [SerializeField] private AudioSource Gunshot;
+    AudioSource audioSource;
+    [SerializeField] AudioClip gunshotClip;
+    [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] float shootDistance;
+    [SerializeField] int damage;
+    [SerializeField] float cooldownTime = 1f;
+    [SerializeField] GameObject ReticleCanvas;
+
+    bool canShoot = true;
 
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponentInChildren<Animator>();
     }
 
@@ -28,29 +33,57 @@ public class PlayerShoot : MonoBehaviour
             if (Input.GetMouseButton(1))
             {
                 anim.SetBool("Aiming", true);
+                if (!ReticleCanvas.activeSelf)
+                {
+                    ReticleCanvas.SetActive(true);
+                }
 
                 // If the left mouse button is pressed while aiming, shoot
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && canShoot)
                 {
                     Shoot();
-                    Gunshot.Play();
+                    canShoot = false;
+                    StartCoroutine(ShotCooldown());
+                    audioSource.PlayOneShot(gunshotClip);
+                    muzzleFlash.Play();
                 }
             }
             else
             {
                 // Set "Aim" to false only when the right mouse button is released
-               anim.SetBool("Aiming", false);
+                anim.SetBool("Aiming", false);
+                if (ReticleCanvas.activeSelf)
+                {
+                    ReticleCanvas.SetActive(false);
+                }
             }
         }
     }
 
+    public void SetMuzzleFlash(ParticleSystem temp)
+    {
+        muzzleFlash = temp;
+    }
+
     void Shoot()
     {
+        Transform camera = Camera.main.transform;
+        RaycastHit hit;
+        if (Physics.Raycast(camera.position, camera.forward, out hit))
+        {
+            if (hit.distance <= shootDistance)
+            {
+                if (hit.collider.tag == "Enemy")
+                {
+                    hit.collider.gameObject.GetComponent<Enemy>().hit(damage);
+                }
+            }
+        }
+    }
 
-            GameObject spawnedBullet = Instantiate(bullet, offset.position, offset.rotation);
-            Rigidbody bulletRb = spawnedBullet.GetComponent<Rigidbody>();
-            bulletRb.velocity = offset.forward * bulletSpeed;
-            Instantiate(shootEffect, offset.position, offset.rotation);
-
+    IEnumerator ShotCooldown()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canShoot = true;
     }
 }

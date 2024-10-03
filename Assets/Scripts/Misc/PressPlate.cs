@@ -4,7 +4,7 @@ using UnityEngine;
 public class PressPlate : MonoBehaviour
 {
     [SerializeField] private GameObject TopPlunger; // Reference to the TopPlunger
-    [SerializeField] private float squishAmount = 0.5f; // Amount to squash the player
+    [SerializeField] private float squishAmount = 0.65f; // Amount to squash the player
     [SerializeField] private float squishDuration = 0.5f; // Duration of the squish effect
     [SerializeField] private float returnDuration = 0.2f; // Duration for returning to original position
 
