@@ -29,6 +29,13 @@ public class PostTrigger : MonoBehaviour
         }
     }
 
+    public void Hit()
+    {
+        Debug.Log("Post hit by projectile!");
+        SetLit(false); // Set the post to unlit
+        postManager.OnPostShot(this);
+    }
+
     public void SetLit(bool lit)
     {
         isLit = lit;

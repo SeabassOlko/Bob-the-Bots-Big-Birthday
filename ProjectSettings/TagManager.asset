@@ -12,6 +12,7 @@ TagManager:
   - FxTemporaire
   - Checkpoint
   - Enemy
+  - Post
   layers:
   - Default
   - TransparentFX
