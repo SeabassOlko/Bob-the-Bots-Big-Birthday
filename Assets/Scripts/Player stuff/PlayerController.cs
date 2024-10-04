@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
         lastCheckpoint = transform.position;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnApplicationFocus(bool focus)
