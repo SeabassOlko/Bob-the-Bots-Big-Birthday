@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Weapon"))
+        if (collision.gameObject.CompareTag("Weapon") && weapon == null)
         {
             Debug.Log("Weapon collision detected. Picking up...");
             HandleWeaponPickup(collision.gameObject);
@@ -191,7 +191,7 @@ public class PlayerController : MonoBehaviour
         {
             SetCheckpoint(collision.transform);
         }
-        else if (collision.gameObject.CompareTag("Weapon"))
+        else if (collision.gameObject.CompareTag("Weapon") && weapon == null)
         {
             Debug.Log("Weapon collision detected. Picking up...");
             HandleWeaponPickup(collision.gameObject);

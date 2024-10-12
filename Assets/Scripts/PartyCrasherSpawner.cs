@@ -6,7 +6,6 @@ public class PartyCrasherSpawner : MonoBehaviour
 {
     public GameObject partyCrasher;
     public GameObject[] spawnPoint;
-    public GameObject BannerToKill;
     public bool partyCrashed = false;
 
     void Start()
@@ -31,7 +30,6 @@ public class PartyCrasherSpawner : MonoBehaviour
                 Instantiate(partyCrasher, spawnPoint[i].transform.position, randomRotation);
             }
 
-            Destroy(BannerToKill);
 
             partyCrashed = true;
         }
