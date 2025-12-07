@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9433cdd0ed87484db15f1d70410b054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   popParticles: {fileID: 9101598619199501188, guid: ac209381dfdb8e7448ed9f42efafad5b, type: 3}
   MAX_HEALTH: 0
   damage: 5
@@ -246,8 +247,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1992655, y: 6.6, z: 2}
-  m_Center: {x: 0, y: 2.65, z: 0}
+  m_Size: {x: 2.1992655, y: 5.7591963, z: 2}
+  m_Center: {x: 0, y: 3.0704021, z: 0}
 --- !u!114 &3939774485502988761
 MonoBehaviour:
   m_ObjectHideFlags: 0

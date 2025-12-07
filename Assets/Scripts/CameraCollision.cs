@@ -13,6 +13,10 @@ public class CameraCollision : MonoBehaviour
     private float xRotation = 0f; // To keep track of vertical camera rotation
 
     private Vector3 targetPosition;
+    public float minDistance = 0.5f; // Minimum distance the camera can be to the player
+    public LayerMask collisionMask; // Layers the camera should collide with (like walls)
+
+    public bool NormalView = true;
 
     void Start()
     {
@@ -22,11 +26,35 @@ public class CameraCollision : MonoBehaviour
 
     void Update()
     {
+        // Adjust the camera position to avoid clipping
+        AdjustCameraPosition();
+
         // Smoothly transition the camera position relative to the player
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, targetPosition, Time.deltaTime * transitionSpeed);
 
         // Handle mouse look around for vertical rotation only
         //MouseLookAround();
+    }
+
+    void AdjustCameraPosition()
+    {
+        // Calculate the target position for the camera based on the player's position
+        Vector3 desiredCameraPos = player.TransformPoint(thirdPersonOffset);
+
+        // Perform a raycast to check if there's an obstacle between the player and the camera
+        RaycastHit hit;
+        if (Physics.Linecast(player.position, desiredCameraPos, out hit, collisionMask) && NormalView)
+        {
+            // If an obstacle is detected, move the camera closer to the hit point
+            float distanceToObstacle = Vector3.Distance(player.position, hit.point);
+            Vector3 direction = (desiredCameraPos - player.position).normalized;
+            targetPosition = player.InverseTransformPoint(player.position + direction * Mathf.Clamp(distanceToObstacle, minDistance, thirdPersonOffset.magnitude));
+        }
+        else if (NormalView)
+        {
+            // No obstacle, use the full third-person offset
+            targetPosition = thirdPersonOffset;
+        }
     }
 
     public void SwitchView(bool isFirstPerson)
@@ -35,11 +63,13 @@ public class CameraCollision : MonoBehaviour
         {
             // Set the target position for first-person view (relative to the player)
             targetPosition = firstPersonOffset;
+            NormalView = false;
         }
         else
         {
             // Set the target position for third-person view (relative to the player)
             targetPosition = thirdPersonOffset;
+            NormalView = true;
         }
     }
 
@@ -53,5 +83,6 @@ public class CameraCollision : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Limit camera vertical rotation to avoid flipping
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
+
 }
 

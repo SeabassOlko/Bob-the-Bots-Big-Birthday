@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (playerController.weapon != null)
+        if (playerController.weapon != null && GetComponent<PlayerSize>().isSquished == false)
         {
             // Handle aiming when the right mouse button is held down
             if (Input.GetMouseButton(1))
@@ -67,9 +67,10 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
+        Transform gun = playerController.weapon.transform;
         Transform camera = Camera.main.transform;
         RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit))
+        if (Physics.Raycast(gun.position, camera.forward, out hit))
         {
             if (hit.distance <= shootDistance)
             {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1667199404901539798}
   m_Layer: 6
   m_Name: Pistol_C_Bolt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4558743732084791266}
   m_Layer: 6
   m_Name: BulletSpawnPoint
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4942018696243458241}
   m_Layer: 6
   m_Name: BalloonCenterMass
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,8 +205,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 6.7063704, z: 2}
-  m_Center: {x: 0, y: 2.853185, z: 0}
+  m_Size: {x: 2, y: 5.9936533, z: 2}
+  m_Center: {x: 0, y: 3.2095451, z: 0}
 --- !u!54 &8586964351962225208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   isDead: 0
-  enemyState: 2
+  enemyState: 1
   path: []
   pathIndex: 0
   distThreshold: 0
@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826755e0b0aeef4bb2d69617ed7c8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   popParticles: {fileID: 9101598619199501188, guid: ac209381dfdb8e7448ed9f42efafad5b, type: 3}
   MAX_HEALTH: 5
   playerCenter: {fileID: 0}
@@ -414,7 +415,7 @@ MonoBehaviour:
   stopAndShootDistance: 8
   gunShotClip: {fileID: 8300000, guid: 3826f9e485c60c94d956219fadb8d1c4, type: 3}
   sparklerParticles: {fileID: 0}
-  patrolable: 0
+  patrolable: 1
 --- !u!1 &2267506012816566921
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +429,7 @@ GameObject:
   - component: {fileID: 6592610568441619487}
   m_Layer: 6
   m_Name: Pupil
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,7 +512,7 @@ GameObject:
   - component: {fileID: 4126053379992350161}
   m_Layer: 6
   m_Name: Pistol_C_Trigger
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,7 +595,7 @@ GameObject:
   - component: {fileID: 1610506565394336568}
   m_Layer: 6
   m_Name: Pistol_C_Receiver
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,7 +678,7 @@ GameObject:
   - component: {fileID: 8452137986638232047}
   m_Layer: 6
   m_Name: EyeWhites
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -761,7 +762,7 @@ GameObject:
   - component: {fileID: 5099405612881766061}
   m_Layer: 6
   m_Name: Pistol_C_Mag
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,7 +845,7 @@ GameObject:
   - component: {fileID: 3176270158140186218}
   m_Layer: 6
   m_Name: Torus.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -925,7 +926,7 @@ GameObject:
   - component: {fileID: 2373405911424155552}
   m_Layer: 6
   m_Name: Pistol_C
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -965,7 +966,7 @@ GameObject:
   - component: {fileID: 7222381955413589316}
   m_Layer: 6
   m_Name: Pistol_C_BarrelGuard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1048,7 +1049,7 @@ GameObject:
   - component: {fileID: 6859191303046186711}
   m_Layer: 6
   m_Name: Pistol_C_Barrel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1131,7 +1132,7 @@ GameObject:
   - component: {fileID: 6509487120220149287}
   m_Layer: 6
   m_Name: Cylinder.006
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1215,7 +1216,7 @@ GameObject:
   - component: {fileID: 3578518126949702866}
   m_Layer: 6
   m_Name: GreenBalloon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1318,7 +1319,7 @@ GameObject:
   - component: {fileID: 4327649290494180594}
   m_Layer: 6
   m_Name: BezierCurve.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1400,6 +1401,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 989401127897817722, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2803935906920708798, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
       propertyPath: m_Name
       value: SFX_MuzzleFlash
@@ -1407,6 +1412,10 @@ PrefabInstance:
     - target: {fileID: 2803935906920708798, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803935906920708798, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8434581671741427306, guid: ce82ce097b451944ab7a44adaac302a4, type: 3}
       propertyPath: m_LocalPosition.x

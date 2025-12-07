@@ -59,11 +59,9 @@ public class PlayerController : MonoBehaviour
         cameraTransform = Camera.main.transform;
         anim = GetComponentInChildren<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
-        if (lastCheckpoint == null)
-        {
-            Debug.Log("Transform set to starting transform");
-            lastCheckpoint = transform.position;
-        }
+        lastCheckpoint = transform.position;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnApplicationFocus(bool focus)
@@ -170,13 +168,13 @@ public class PlayerController : MonoBehaviour
         weapon.transform.SetPositionAndRotation(attachPoint.position, attachPoint.rotation);
         weapon.transform.SetParent(attachPoint);
         Physics.IgnoreCollision(GetComponent<Collider>(), weapon.GetComponent<Collider>());
-        //GameObject.Find("Party_Crashers").GetComponent<PartyCrasherSpawner>().SpawnPartyCrashers();
+        GameObject.Find("Party_Crashers").GetComponent<PartyCrasherSpawner>().SpawnPartyCrashers();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Weapon"))
+        if (collision.gameObject.CompareTag("Weapon") && weapon == null)
         {
             Debug.Log("Weapon collision detected. Picking up...");
             HandleWeaponPickup(collision.gameObject);
@@ -188,6 +186,15 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Vent"))
         {
             GetComponentInChildren<CameraCollision>().SwitchView(true);
+        }
+        else if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            SetCheckpoint(collision.transform);
+        }
+        else if (collision.gameObject.CompareTag("Weapon") && weapon == null)
+        {
+            Debug.Log("Weapon collision detected. Picking up...");
+            HandleWeaponPickup(collision.gameObject);
         }
     }
 
