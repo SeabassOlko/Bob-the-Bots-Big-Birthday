@@ -19,7 +19,7 @@ public class EnemyPatroller : Enemy
     [SerializeField] ParticleSystem sparklerParticles;
 
     [SerializeField] bool patrolable = false;
-
+    
     // Start is called before the first frame update
     public override void Start()
     {
